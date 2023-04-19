@@ -1,0 +1,615 @@
+a, button, input[type="submit"], input[type="button"] {
+    font-size: 15px;;
+}
+a:hover{
+    text-decoration: none;
+}
+.frame{
+  width: 35%;
+  margin: auto;
+}
+#grid th{
+    cursor: pointer;
+}
+/* Searchbar styles 
+Extract from www.w3schools.com */
+
+    #shop-img {
+        left: 0;
+        top: -50px;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 90px;
+        z-index: 1;
+    }
+    .panel {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    }
+    .w3-padding-4{
+      padding: 4px;
+    }
+    #login {
+        min-height: 100%;
+        /* padding-bottom: 45px; */
+    }
+
+    #login-panel {
+        margin: 0 auto;
+        width: 350px;
+    }
+
+    #login-header {
+        color: #6d6d6d;
+        margin-bottom: 30px;
+        padding-top: 40px;
+    }
+
+    .flip-container {
+        height: 420px;
+        margin-top: 80px;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+    .back,
+    .front {
+        backface-visibility: hidden;
+        left: 0;
+        padding: 40px;
+        position: absolute;
+        top: 0;
+        transform-style: preserve-3d;
+        transition: .6s;
+        width: 100%;
+    }
+
+#search {
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 100%;
+    /* Full-width */
+    font-size: 16px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    margin-bottom: 12px;
+    /* Add some space below the input */
+}
+
+.chamaleon:hover {
+  animation-name: rainbow;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow {
+  0%   {color:rgb(235, 80, 100);}
+  
+  50%  {color:rgb(10, 110, 245);}
+  
+  100% {color:rgb(235, 80, 100);}
+}
+
+/* Estilos menú mobil */
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+
+
+/* Fin estilos menú mobil */
+
+
+#bodyContenedor {
+    width: 1024px;
+    margin: 0 auto;
+
+    background-color: white;
+}
+
+.producto {
+    float: left;
+
+    margin-right: 40px;
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.Comprar {
+    color: green;
+}
+
+#carritoDeCompras {
+    clear: left;
+
+    padding-bottom: 15px;
+
+    border-top: 1px solid #ccc;
+}
+
+#carritoDeCompras div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #ccc;
+}
+
+#carritoDeCompras h2 h3 {
+    font-size: 150%;
+}
+
+#carritoDeCompras .cantidad {
+    float: right;
+
+    line-height: 25px;
+}
+
+#carritoDeCompras button {
+    display: inline-block;
+
+
+    margin: 0 10px;
+    padding: 5px 15px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    border: none;
+    background-color: #555555;
+
+    font-size: 13px;
+}
+
+#carritoDeCompras .mas {
+    margin-right: 40%;
+}
+
+#carritoDeCompras button:focus {
+    outline: 0px;
+}
+
+#carritoDeCompras button:hover {
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+}
+
+#precioTotal {
+    float: right;
+
+    background-color: white;
+
+    font-size: 200%;
+}
+
+.valid{
+    border: green solid 2px
+}
+.invalid {
+    border: red solid 2px
+}
+
+.ficha{
+    border-bottom: 1px solid;
+    border-left:1px solid;
+    border-right:1px solid;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+/*============== */
+/*= Contenedores =*/
+/*============== */
+.contenedor{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* .box-shadow {
+    box-shadow: 1px 1px 8px red;
+} */
+
+.w3-centered tr th,
+.w3-centered tr td {
+    text-align: center;
+    vertical-align: middle
+}
+
+.margenSuperior{
+    margin-top: 200px;
+}
+
+/* ******************* */
+/* CHECKBOX SWTICH */
+/* ******************* */
+
+input[type="checkbox"].custom{
+    display: none;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 24px;
+width: 24px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input[type="checkbox"]:checked+.slider:before {
+    transform: translateX(26px);
+}
+input[type="checkbox"] .sb {
+    visibility: hidden;
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*==========
+ MENU MOVIL
+ ========= */
+
+.capaOculta {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.capaOculta-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.capaOculta a,
+.capaOculta button {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.capaOculta a:hover,
+.capaOculta a:focus {
+    color: #f1f1f1;
+}
+
+.capaOculta .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* ========
+    RADIO
+======== */
+
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.rad {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 1px solid;
+}
+
+.rad {
+    border-radius: 50%;
+}
+
+.rad:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio input:checked~.rad {
+    background-color: currentColor;
+}
+
+.radio input:disabled~.rad {
+    color: #aaaaaa;
+}
+
+.radio input:checked~.rad:after {
+    display: block;
+}
+
+.radio .rad:after {
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+
+/*============*/
+/*= Copyleft =*/
+/*============*/
+
+.copy-left {
+    display: inline-block;
+    text-align: right;
+    margin: 0px;
+    transform: scaleX(-1);
+}
+
+/*===========
+ MEDIASCREEN 
+ ===========*/
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  #smallBar {
+    display: block;
+  }
+  .capaOculta a {
+    font-size: 20px
+  }
+  .capaOculta .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* @media screen and (max-width: 450px) {
+  #logo,
+  #searchBar {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .top-bar-element {
+    padding: 8px;
+  }
+  #search{
+    width: 100%;
+    padding: 0px !important;
+  }
+} */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 992px) {
+  #logo,
+  #searchBar {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .top-bar-element {
+    padding: 8px;
+  }
+  #search{
+    width: 100%;
+    padding: 0px !important;
+  }
+  #title {
+    font-size: 18px;
+  }
+  th, td{
+    font-size: small;
+  }
+  .w3-padding{
+    padding: 0;
+  }
+  .w3-content {
+    width: 100%;
+  }
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+          /* #title {
+              padding: 64px;
+          } */
+ }
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+     /* #title {
+         padding: 64px;
+     } */
+ }
+
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+     .frame {
+         width: 40%;
+     }
+     #grid{
+       font-size: 16px;
+     }
+ }
+@media screen and (max-width: 992px) {
+  .frame {
+    width: 40%;
+  }
+}
+
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+          /* #title {
+         padding: 64px;
+     } */
+ }
+
+@media screen and (max-width: 800px) {
+    .w3-content {
+        width: 100%;
+    }
+}
+
+.bg {
+    background-image: linear-gradient(to bottom, rgb(43, 49, 128), #6271c8);
+    color: rgb(35, 68, 35);
+}
+
+a>.bg:hover {
+    background-image: linear-gradient(to bottom, #6271c8, rgb(43, 49, 128));
+}  

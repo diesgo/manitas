@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webfonts</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    
+    .grid12 {
+        margin-left: 15px;
+        float: left;
+        display: inline;
+        overflow: hidden;
+    }
+    
+    .section .firstcol {
+        margin-left: 0;
+    }
+    
+    .sample_table td {
+        padding-top: 3px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        vertical-align: middle;
+        line-height: 1.2em;
+    }
+    
+    .sample_table td:first-child {
+        background-color: #eee;
+        text-align: right;
+        padding-right: 5px;
+        padding-left: 0;
+        padding: 5px;
+        font: 11px/12px "Courier New", Courier, mono;
+    }
+    
+    .size10 {
+        font-size: 10px;
+    }
+    
+    .size11 {
+        font-size: 11px;
+    }
+    
+    .size12 {
+        font-size: 12px;
+    }
+    
+    .size13 {
+        font-size: 13px;
+    }
+    
+    .size14 {
+        font-size: 14px;
+    }
+    
+    .size16 {
+        font-size: 16px;
+    }
+    
+    .size18 {
+        font-size: 18px;
+    }
+    
+    .size20 {
+        font-size: 20px;
+    }
+    
+    .size24 {
+        font-size: 24px;
+    }
+    
+    .size30 {
+        font-size: 30px;
+    }
+    
+    .size36 {
+        font-size: 36px;
+    }
+    
+    .size48 {
+        font-size: 48px;
+    }
+    
+    .size60 {
+        font-size: 60px;
+    }
+    
+    .size72 {
+        font-size: 72px;
+    }
+    
+    .size90 {
+        font-size: 90px;
+    }
+</style>
+
+<body id="body">
+    <div style="display: flex; flex-wrap: nowrap;">
+        <div id="uno" style="width: 48%; display: flex; margin: 1%; border: 1px solid #000; border-radius: 8px;">
+            <div style="width: 25%; margin: 0 auto; padding: 40px; line-height: 1.6;">
+                <select name="fuentes" id="fuentes" onchange="cambioFuente();">
+                    <option value="amarant">Amarath</option>
+                    <option value="arima">Arima</option>
+                    <option value="catamaran">Catamaran</option>
+                    <option value="confortaa-bold">Confortaa bold</option>
+                    <option value="confortaa-regular">Confortaa regular</option>
+                    <option value="de-valencia">De Valencia</option>
+                    <option value="densia">Densia</option>
+                    <option value="emblem">Emblema</option>
+                    <option value="haetten-schweiler">Haettenscheweiler</option>
+                    <option value="lemonada">Lemonada</option>
+                    <option value="lobster">Lobster</option>
+                    <option value="manropeextralight">Manrope extra light</option>
+                    <option value="monoton">Monoton</option>
+                    <option value="montserrat">Montserrat</option>
+                    <option value="nunito">Nunito</option>
+                    <option value="oswald">Oswald</option>
+                    <option value="permanent-maker">Permanent maker</option>
+                    <option value="pompiere">Pompiere</option>
+                    <option value="restu">Restu</option>
+                    <option value="roboto">Roboto</option>
+                    <option value="samble-tracie">Samble Tracie</option>
+                    <option value="samble-tracie-swash">Samble Tracie Swash</option>
+                    <option value="spoken">Spoken</option>
+                    <option value="robofan-symbols">Robofan Symbols</option>
+                    <option value="transformers">Transformers</option>
+                    <option value="varela">Varela</option>
+                    <option value="zanzabar">Zanzabar</option>
+				</select>
+            </div>
+            <div style="width: 75%; margin: 0 auto; padding: 40px; line-height: 1.6;">
+                <h1 id="fuente" style="text-align: center;background-color: black; color: white;padding: 20px;"></h1>
+                <h1>h1 Título o cabecera</h1>
+                <h2>h2 Título o cabecera</h2>
+                <h3>h3 Título o cabecera</h3>
+                <h4>h4 Título o cabecera</h4>
+                <h5>h5 Título o cabecera</h5>
+                <h6>h6 Título o cabecera</h6>
+                <p>Ejemplo de párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolor optio fuga animi commodi eos aspernatur! Reprehenderit corrupti, tempora quam ducimus beatae ipsum libero doloremque nostrum, sint laudantium corporis
+                    laboriosam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, explicabo esse? Deserunt quis quaerat molestias, ratione, magni consequuntur itaque officiis iusto aperiam, sunt voluptatum odio quas reprehenderit error suscipit
+                    nam.
+                </p>
+            </div>
+        </div>
+
+        <div id="dos" style="width: 48%; display: flex; margin: 1%; border: 1px solid #000; border-radius: 8px;">
+            <div style="width: 25%; margin: 0 auto; padding: 40px; line-height: 1.6;">
+                <select name="fuentes2" id="fuentes2" onchange="cambioFuente2();">
+                    <option value="amarant">Amarath</option>
+                    <option value="arima">Arima</option>
+                    <option value="catamaran">Catamaran</option>
+                    <option value="confortaa-bold">Confortaa bold</option>
+                    <option value="confortaa-regular">Confortaa regular</option>
+                    <option value="de-valencia">De Valencia</option>
+                    <option value="densia">Densia</option>
+                    <option value="emblem">Emblema</option>
+                    <option value="haetten-schweiler">Haettenscheweiler</option>
+                    <option value="lemonada">Lemonada</option>
+                    <option value="lobster">Lobster</option>
+                    <option value="manropeextralight">Manrope extra light</option>
+                    <option value="monoton">Monoton</option>
+                    <option value="montserrat">Montserrat</option>
+                    <option value="nunito">Nunito</option>
+                    <option value="oswald">Oswald</option>
+                    <option value="permanent-maker">Permanent maker</option>
+                    <option value="pompiere">Pompiere</option>
+                    <option value="restu">Restu</option>
+                    <option value="roboto">Roboto</option>
+                    <option value="samble-tracie">Samble Tracie</option>
+                    <option value="samble-tracie-swash">Samble Tracie Swash</option>
+                    <option value="spoken">Spoken</option>
+                    <option value="robofan-symbols">Robofan Symbols</option>
+                    <option value="transformers">Transformers</option>
+                    <option value="varela">Varela</option>
+                    <option value="zanzabar">Zanzabar</option>
+				</select>
+            </div>
+            <div style="width: 75%; margin: 0 auto; padding: 40px; line-height: 1.6;">
+                <h1 id="fuente2" style="text-align: center;background-color: black; color: white;padding: 20px;"></h1>
+                <h1>h1 Título o cabecera</h1>
+                <h2>h2 Título o cabecera</h2>
+                <h3>h3 Título o cabecera</h3>
+                <h4>h4 Título o cabecera</h4>
+                <h5>h5 Título o cabecera</h5>
+                <h6>h6 Título o cabecera</h6>
+                <p>Ejemplo de párrafo: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolor optio fuga animi commodi eos aspernatur! Reprehenderit corrupti, tempora quam ducimus beatae ipsum libero doloremque nostrum, sint laudantium corporis
+                    laboriosam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, explicabo esse? Deserunt quis quaerat molestias, ratione, magni consequuntur itaque officiis iusto aperiam, sunt voluptatum odio quas reprehenderit error suscipit
+                    nam.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="webfonts.js"></script>
+</body>
+
+</html>
