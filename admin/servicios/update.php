@@ -3,13 +3,13 @@
       include '../templates/header.php';
       include '../templates/header_title.php';
       require '../../config/conexion.php';
-      $servicio = getServiciosById($_GET['id']);
+      $servicio = getServiciosById($_REQUEST['id']);
       if (isset($_REQUEST['update'])) {
         $id = $servicio['id_servicio'];
-        $nombre = $_REQUEST['nombre'];
+        $servicio = $_REQUEST['servicio'];
         $descripcion = $_REQUEST['descripcion_servicio'];
         $sql = "UPDATE servicios SET
-        nombre_servicio = '" . $nombre . "',
+        servicio = '" . $servicio . "',
         descripcion_servicio = '" . $descripcion . "'
         WHERE id_servicio = " . $id . ";";
         echo "<h3 class='w3-text-green'><i class='w3-xlarge fas fa-check'></i> Los cambios se han guardado satisfactoriamente</h3>";
@@ -27,7 +27,7 @@
         $sql = "SELECT * FROM servicios WHERE id_servicio = '$id'";
         $result = mysqli_query($conex, $sql);
         $row = mysqli_fetch_assoc($result);
-        $nombre = $row['nombre_servicio'];
+        $servicio = $row['servicio'];
         $descripcion = $row['descripcion_servicio'];
       }
       $sql = "SELECT * FROM servicios";
@@ -39,8 +39,8 @@
           <div class="w3-row">
 
             <div class="w3-col w3-padding">
-              <label for="nombre" class="w3-text-theme-dark w3-medium">Nombre</label><br>
-              <input class='w3-input w3-border w3-round' name='nombre' id='nombre' type='text' value="<?php echo $servicio['nombre_servicio']; ?>" pattern=[A-Za-z\d\W].{3,30}>
+              <label for="servicio" class="w3-text-theme-dark w3-medium">Servicio</label><br>
+              <input class='w3-input w3-border w3-round' name='servicio' id='servicio' type='text' value="<?php echo $servicio['servicio']; ?>">
             </div>
 
             <div class="w3-col w3-padding">

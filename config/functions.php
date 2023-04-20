@@ -37,7 +37,8 @@ function getServicios(){
 
 function getServiciosById($id){
   $mysqli = openConex();
-  $result = $mysqli->query('SELECT * FROM servicios WHERE id_servicio =' . $id);
+  $sql = 'SELECT * FROM servicios WHERE id_servicio =' . $id;
+  $result = mysqli_query($mysqli, $sql);
   $row = mysqli_fetch_assoc($result);
   return $row;
 }

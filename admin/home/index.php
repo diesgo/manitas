@@ -23,7 +23,6 @@
             $sql = "SELECT * FROM tiquets
               INNER JOIN clientes ON id_cliente = cliente_id
               INNER JOIN estados ON id_estado = estado_id
-              INNER JOIN servicios ON id_servicio = servicio_id
               WHERE estado_id = 1";
             $result = mysqli_query($conn, $sql);
 
@@ -41,7 +40,7 @@
           <tr>
             <td class="w3-center"><?php echo $row["id_tiquet"] ?></td>
             <td style='text-align: left;'><?php echo $row["nombre_cliente"] . " " . $row['apellidos_cliente'] ?></td>
-            <td><?php echo $row["incidencia"] ?></td>
+            <td><?php echo $row["actuacion"] ?></td>
             <td><?php echo $row["estado"] ?></td>
             <td>
               <a href="../tiquets/asignar.php?id=<?php echo $row["id_tiquet"] ?>" class="w3-button w3-theme w3-block w3-round w3-small">Asignar</a>
