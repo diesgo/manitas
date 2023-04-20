@@ -22,3 +22,9 @@ function w3_close() {
   mySidebar.style.display = "none";
   // overlayBg.style.display = "none";
 }
+
+function show(id){
+  target=document.getElementById(id);
+  target.style.display = "block";
+  document.getElementById('seleccionar').style.display="none";
+}
