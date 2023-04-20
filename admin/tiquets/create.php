@@ -15,7 +15,7 @@
           <section class="w3-section">
             <div class="w3-row w3-center">
               <div class="w3-col s12 m4 w3-padding">
-                <label for='Cliente' class="w3-text-theme w3-medium">Cliente</label>
+                <label for='cliente' class="w3-text-theme w3-medium">Cliente</label>
                 <select name="cliente" id="cliente" class='w3-block w3-select w3-white w3-border w3-border-theme w3-round' onchange="show('actualCliente')">
                   <option value="">Selecciona...</option>
                   <?php
