@@ -75,18 +75,11 @@ $user = getUsersById($_SESSION['id_user']);
         <a href="#" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Tarifas</a>
       </div>
 
-      <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('incidencias')"><i class="fa fa-users a-fw"></i> Incidencias <i class="w3-right fa fa-caret-down"></i></button>
+      <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('incidencias')"><i class="fas fa-notes-medical"></i> Tiquets de asistencia <i class="w3-right fa fa-caret-down"></i></button>
       <div id="incidencias" class="w3-hide w3-white w3-theme-l2">
         <a href="../tiquets/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">tiquets</a>
-        <a href="../clientes/create.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Nuevo Cliente</a>
+        <a href="../tiquets/create.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Nuevo tiquet</a>
         <a href="#" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Tarifas</a>
-      </div>
-
-      <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('catalogo')"><i class="fas fa-book"></i> Secciones <i class="w3-right fa fa-caret-down"></i></button>
-      <div id="catalogo" class="w3-hide w3-white w3-theme-l2">
-        <a href="../tiquets/index.php" class="w3-bar-item w3-button w3-hover-theme">Tiquets</a>
-        <a href="../servicios/index.php" class="w3-bar-item w3-button w3-hover-theme">Servicios</a>
-        <a href="../colaboradores/index.php" class="w3-bar-item w3-button w3-hover-theme">Colaboradores</a>
       </div>
 
       <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('servicios')"><i class="fas fa-boxes"></i> Servicios <i class="w3-right fa fa-caret-down"></i></button>
@@ -100,11 +93,13 @@ $user = getUsersById($_SESSION['id_user']);
         <a href="../tiquets/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Todas</a>
       </div>
 
-      <?php
-      if ($user['grupo_id'] == 1) {
-        include 'configuracion.php';
-      }
-      ?>
+      <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('configuracion')"><i class="fa fa-cog fa-fw"></i> Configuración <i class="w3-right fa fa-caret-down"></i></button>
+      <div id="configuracion" class="w3-hide w3-white w3-theme-l2">
+        <a href="../estados/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Estados</a>
+        <a href="../usuarios/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Usuarios</a>
+        <a href="../servicios/index.php" class="w3-bar-item w3-button w3-hover-theme">Servicios</a>
+        <a href="../colaboradores/index.php" class="w3-bar-item w3-button w3-hover-theme">Colaboradores</a>
+      </div>
 
       <div class="w3-bar-block">
         <a href="../statics/index.php" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-chart-line"></i> Statistics</a>

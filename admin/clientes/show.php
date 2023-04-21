@@ -43,7 +43,7 @@ $tiquets = getTiquetsByCliente($_GET['id_cliente']);
           <tr>
             <td class="w3-center"><?php echo $tiquet['id_tiquet'] ?></td>
             <td class='w3-center'><?php echo $tiquet["date_add"] ?></td>
-            <td class='w3-center'><?php echo $tiquet["incidencia"] ?></td>
+            <td class='w3-center'><?php echo $tiquet["actuacion"] ?></td>
             <td class='w3-center'><?php echo $tiquet["estado"] ?></td>
             <td class='w3-center'>
                   <a class="w3-text-green w3-hover-text-orange" href="../tiquets/show.php?id=<?php echo $tiquet['id_tiquet'] ?>">

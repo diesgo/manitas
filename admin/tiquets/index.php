@@ -1,6 +1,7 @@
       <?php
       $titulo = 'Listado de tiquets';
       include '../templates/header.php';
+      include '../templates/header_index.php';
       ?>
       <div class="w3-container">
 
@@ -12,7 +13,7 @@
         INNER JOIN servicios on id_servicio = servicio_id";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-          echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'><thead class='w3-theme'><tr>
+          echo "<table id='grid' class='w3-content w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'><thead class='w3-theme'><tr>
               <th width='10%' class='w3-center' onclick='sortTable(0)'></i>Nº tiquet</th>
               <th width='15%' onclick='sortTable(1)'>Cliente </th>
               <th width='25%'>Incidencia</th>

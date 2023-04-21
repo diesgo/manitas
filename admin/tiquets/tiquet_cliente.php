@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="w3-row w3-padding-16">
-      <input type='submit' value='Guardar' name='addnew' class='w3-button w3-border w3-border-theme w3-theme w3-round w3-right' style='width: 100px;'>
+      <input type='submit' value='Guardar' name='tiquetCliente' class='w3-button w3-border w3-border-theme w3-theme w3-round w3-right' style='width: 100px;'>
     </div>
   </div>
 </form>

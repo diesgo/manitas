@@ -20,15 +20,17 @@
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
-          <b>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></b>
+          <p class="w3-center">Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></p>
+          <h4>Actuación</h4>
+          <p><?php echo $row['actuacion']?></p>
         </div>
-        <table id="grid" class="w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
+        <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">
             <tr>
               <th style="width:15%" class="w3-center" onclick="sortTable(0)"></i>Fecha</th>
               <th style="width:10%" onclick="sortTable(1)">Estado</th>
               <th style="width:20%">Comentario</th>
-              <th style="width:15%" class="w3-center" style='width: 2%'>Editar</th>
+              <th style="width:15%" class="w3-center" style='width: 2%'>Actualizar</th>
             </tr>
           </thead>
           <tbody>

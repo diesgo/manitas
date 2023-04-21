@@ -6,10 +6,10 @@
       if (isset($_REQUEST['update'])) {
         $id = $tiquet['id_tiquet'];
         $estado = $_REQUEST['estado'];
-        $incidencia = $_REQUEST['incidencia'];
+        $actuacion = $_REQUEST['actuacion'];
         $sql = "UPDATE tiquets SET
         estado_id = '$estado',
-        incidencia = '$incidencia'
+        actuacion = '$actuacion'
         WHERE id_tiquet = " . $id . ";";
         echo "<h3 class='w3-text-green'><i class='w3-xlarge fas fa-check'></i> Los cambios se han guardado satisfactoriamente</h3>";
         echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
@@ -78,9 +78,9 @@
               <!-- Estado -->
 
               <section class="w3-section">
-                <legend for="incidencia" class="w3-text-theme-dark w3-medium">Descripción</legend>
-                <textarea class="w3-block w3-border w3-round" name="incidencia" id="incidencia" rows="5" placeholder="Descrive la incidencia" required><?php echo $tiquet['incidencia'] ?></textarea>
-                <small id="info_incidencia"></small>
+                <legend for="actuacion" class="w3-text-theme-dark w3-medium">Descripción</legend>
+                <textarea class="w3-block w3-border w3-round" name="actuacion" id="actuacion" rows="5" placeholder="Descrive la actuacion" required><?php echo $tiquet['actuacion'] ?></textarea>
+                <small id="info_actuacion"></small>
               </section>
 
               <div class="w3-col l6 m6">
