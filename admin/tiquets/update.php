@@ -7,7 +7,9 @@
         $id = $tiquet['id_tiquet'];
         $estado = $_REQUEST['estado'];
         $actuacion = $_REQUEST['actuacion'];
+        $servicio = $_REQUEST['servicio'];
         $sql = "UPDATE tiquets SET
+        servicio_id = $servicio,
         estado_id = '$estado',
         actuacion = '$actuacion'
         WHERE id_tiquet = " . $id . ";";

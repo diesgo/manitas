@@ -3,27 +3,30 @@
       include '../templates/header.php';
       include '../templates/header_title.php';
       require '../../config/conexion.php';
-      $tiquets = getTiquetsById($_REQUEST['id']);
-      $titulo = $titulo . " " . $tiquets['id_tiquet'];
+      $tiquet = getTiquetsById($_REQUEST['id']);
+      $titulo = $titulo . " " . $tiquet['id_tiquet'];
       $sql = "SELECT * FROM tiquets";
       $result = mysqli_query($conex, $sql);
       if (isset($_REQUEST['update'])) {
-        $id = $tiquets['id_tiquet'];
-        $colaborador = $_REQUEST['id_colaborador'];
-        $comentario = $_REQUEST['comentario'];
-        $sql = "UPDATE tiquets SET estado_id = 2, colaborador_id = " . $colaborador . " WHERE id_tiquet = " . $id;
-        mysqli_query(openConex(), $sql);
-        $sql = "INSERT INTO tiquet_" . $_REQUEST['id'] . " (estado_id, actuacion, comentario)
-        VALUES (2, 'asignado a " . $colaborador . "', '" . $comentario . "')";
-        $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
-        if ($conn->query($sql) === TRUE) {
-          echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
-          echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+        if ($tiquet['servicio_id'] == 1) {
+          echo "<script>alert('Antes de asignar un tiquet, debes especificar el servicio')</script>";
         } else {
-          echo "Error: " . $sql . "<br>" . $conn->error;
+          $id = $tiquet['id_tiquet'];
+          $colaborador = $_REQUEST['id_colaborador'];
+          $comentario = $_REQUEST['comentario'];
+          $sql = "UPDATE tiquets SET estado_id = 2, colaborador_id = " . $colaborador . " WHERE id_tiquet = " . $id;
+          mysqli_query(openConex(), $sql);
+          $sql = "INSERT INTO tiquet_" . $_REQUEST['id'] . " (estado_id, colaborador_id, comentario) VALUES (2, '" . $colaborador . "', '" . $comentario . "')";
+          $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
+          if ($conn->query($sql) === TRUE) {
+            echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
+            echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+          $conn->close() or die("Error al ejecutar la consulta");
+          // echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
         }
-        $conn->close() or die("Error al ejecutar la consulta");
-        echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
       } else {
         if (!isset($_POST['id'])) {
           $sql = "SELECT min(id_tiquet) FROM tiquets";
@@ -33,11 +36,6 @@
         } else {
           $id = $_POST["id"];
         }
-        // $sql = "SELECT * FROM tiquets WHERE id_tiquet = '$id'";
-        // $result = mysqli_query($conex, $sql);
-        // $row = mysqli_fetch_assoc($result);
-        // $id = $row['id_tiquet'];
-        // $dispensario = $row['dispensario'];
       }
       ?>
 
