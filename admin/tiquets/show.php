@@ -13,16 +13,16 @@
       </div>
 
       <div class="w3-container w3-padding-16 w3-responsive" style="min-height: 594px;">
-        <div class="w3-row w3-padding-16">
+        <div class="w3-content w3-padding-16">
           <?php  
           $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
           $sql = "SELECT * FROM tiquets INNER JOIN clientes ON id_cliente = cliente_id WHERE id_tiquet = " . $_REQUEST['id'];
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
-          <p class="w3-center">Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></p>
-          <h4>Actuación</h4>
-          <p><?php echo $row['actuacion']?></p>
+          <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
+          <h4>Actuación:</h4>
+          <h4><?php echo $row['actuacion']?></h4>
         </div>
         <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">
