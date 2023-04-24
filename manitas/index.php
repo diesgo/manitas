@@ -8,13 +8,16 @@ require('../config/conexion.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=",,/../../css/w3.css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="../css/themes/w3-theme-azul-1.css">
+    <link rel="stylesheet" href="../fontawesome5/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
     <div class="w3-container">
         <div class="w3-row">
             <h4>Bienvenido <?php echo $_SESSION['username'] ?></h4>
+            <a href="../admin/usuarios/exit.php" class="w3-bar-item w3-button w3-theme-d3 w3-hover-theme"><i class="fas fa-sign-out-alt"></i></a>
         </div>
         <div class="w3-row">
             <div class="w3-content">

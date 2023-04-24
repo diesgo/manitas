@@ -5,13 +5,28 @@
 
       <!-- Header -->
 
-      <div class="w3-container w3-padding-16">
+      <div class="w3-row w3-padding-16">
         <h2 id="title" class="w3-center w3-text-theme"><b><?php echo $titulo ?></b></h2>
-        <div class="w3-quarter">
-          <a class="w3-button w3-green w3-round w3-hover-green w3-margin-top " href="../tiquets/create.php"><i class="fas fa-plus-circle"></i> Nuevo tiquet</a>
-        </div>
-        <div class="w3-quarter">
-          <a class="w3-button w3-green w3-round w3-hover-green w3-margin-top" href="../clientes/create.php"><i class="fas fa-plus-circle"></i> Nuevo Cliente</a>
+        <div class="w3-cell-row w3-padding-large">
+        
+          <div class="w3-cell">
+            <a class="w3-button w3-green w3-round w3-hover-green w3-margin-top w3-large" href="../tiquets/create.php">
+              <div class="w3-row w3-padding w3-xxlarge">
+                <i class="far fa-clipboard"></i>
+              </div>
+              <p>Nuevo tiquet</p>
+            </a>
+          </div>
+
+          <div class="w3-cell">
+            <a class="w3-button w3-green w3-round w3-hover-green w3-margin-top w3-large" href="../clientes/create.php">
+              <div class="w3-row w3-padding w3-xxlarge">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <p>Nuevo cliente</p>
+            </a>
+          </div>
+
         </div>
       </div>
 
@@ -20,7 +35,7 @@
       <!-- Tiquets sin asignar -->
 
         <div class="w3-quarter">
-          <a href="../tiquets/index.php" style="text-decoration:none">
+          <a href="../tiquets/tiquets_estados.php?estado_id=1" style="text-decoration:none">
             <div class="w3-container w3-red w3-padding-16">
               <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -45,7 +60,7 @@
       <!-- Tiquets asignados -->
 
         <div class="w3-quarter">
-          <a href="../tiquets/index.php" style="text-decoration:none">
+          <a href="../tiquets/tiquets_estados.php?estado_id=2" style="text-decoration:none">
             <div class="w3-container w3-theme w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -70,7 +85,7 @@
       <!-- Tiquets en espera -->
 
         <div class="w3-quarter">
-          <a href="../tiquets/index.php" style="text-decoration:none">
+          <a href="../tiquets/tiquets_estados.php?estado_id=4" style="text-decoration:none">
             <div class="w3-container w3-purple w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -95,7 +110,7 @@
       <!-- Tiquets pendientes de aprobación -->
 
         <div class="w3-quarter">
-          <a href="../tiquets/index.php" style="text-decoration:none">
+          <a href="../tiquets/tiquets_estados.php?estado_id=5" style="text-decoration:none">
             <div class="w3-container w3-orange w3-text-white w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -126,7 +141,7 @@
       <!-- Tiquets en proceso -->
 
         <div class="w3-quarter">
-          <a href="../tiquets/index.php" style="text-decoration:none">
+          <a href="../tiquets/tiquets_estados.php?estado_id=3" style="text-decoration:none">
             <div class="w3-container w3-green w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
