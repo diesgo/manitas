@@ -42,10 +42,16 @@ if ($result->num_rows > 0) {
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
     $_SESSION['id_user'] = $row['id_user'];
     $_SESSION['email'] = $row['email'];
-
-    echo "Bienvenido! " . $_SESSION['username'];
+    $_SESSION['grupo_id'] = $row['grupo_id'];
+    if ($_SESSION['grupo_id'] == 2) {
+      header('Location: ../manitas/index.php');//redirecciona a la pagina del usuario
+    } else {
+      echo "Bienvenido! " . $_SESSION['username'];
     echo "<br><br><a href=../select.php>Panel de Control</a>"; 
     header('Location: ../select.php');//redirecciona a la pagina del usuario
+    }
+
+    
 
  } else {
    echo "Username o Password estan incorrectos.";

@@ -8,21 +8,41 @@
 
       <div class="w3-container w3-padding-32">
         <div class="w3-content">
-          <h2 id="title" class="w3-center w3-text-theme" style="text-shadow:2px 2px 5px #c5c5c5"><b><?php echo $titulo ?> <?php echo $_REQUEST['id']?></b></h2>
+          <h2 id="title" class="w3-center w3-text-theme" style="text-shadow:2px 2px 5px #c5c5c5"><b><?php echo $titulo ?> <?php echo $_REQUEST['id'] ?></b></h2>
         </div>
       </div>
 
       <div class="w3-container w3-padding-16 w3-responsive" style="min-height: 594px;">
+<<<<<<< HEAD
         <div class="w3-content w3-padding-16">
           <?php  
+=======
+        <div class="w3-row w3-padding-16">
+          <?php
+>>>>>>> 92d9baa1dab2de594f1854a5ff7a2ade5109cc8e
           $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
           $sql = "SELECT * FROM tiquets INNER JOIN clientes ON id_cliente = cliente_id WHERE id_tiquet = " . $_REQUEST['id'];
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
+<<<<<<< HEAD
           <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
           <h4>Actuación:</h4>
           <h4><?php echo $row['actuacion']?></h4>
+=======
+          <div class="w3-content">
+            <section class="w3-section">
+            <label>Cliente</label>
+            <input type="text" value="<?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?>" class="w3-input w3-border w3-border-theme w3-round">
+            </section>
+            <section class="w3-section">
+            <label>Actuación a realizar</label>
+            <textarea class="w3-block w3-border w3-border-theme w3-round" rows="5">
+              <?php echo $row['actuacion'] ?>
+            </textarea>
+            </section>
+          </div>
+>>>>>>> 92d9baa1dab2de594f1854a5ff7a2ade5109cc8e
         </div>
         <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">
@@ -35,7 +55,7 @@
           </thead>
           <tbody>
             <?php
-            $tiquet = "tiquet_".$_REQUEST['id'];
+            $tiquet = "tiquet_" . $_REQUEST['id'];
             $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
             $sql = "SELECT * FROM " . $tiquet . " INNER JOIN estados ON id_estado = estado_id";
             $result = mysqli_query($conn, $sql);

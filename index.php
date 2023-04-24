@@ -51,7 +51,7 @@ $setting = getSetingsById(1);
       <img src="img/manitas_logo.png" alt="Logotipo manitas system" width="150px">
     </div>
 
-    <form style="width: 300px;margin: auto;" method="post" action="login/checklogin.php" name="signin-form" class="w3-border w3-round-large w3-padding w3-theme-l5 w3-text-theme">
+    <form style="width: 300px;margin: auto;" method="post" action="login/checklogin.php" name="signin-form" class="w3-border w3-round-large w3-padding-large w3-theme-l5 w3-text-theme">
       <h1 class="w3-center">Inicio de sesión</h1>
 
       <section class="w3-section">
@@ -62,12 +62,12 @@ $setting = getSetingsById(1);
       <section class="w3-section">
         <label for="password">Contraseña</label>
         <small class="w3-right"><a id="passShow" href="#" class="w3-text-blue" onclick="showPassword('passShow', 'password')">Mostrar</a></small>
-        <input class="w3-input w3-border w3-round" id="password" type="password" placeholder="&#128273 Contraseña" name="password" required />
+        <input class="w3-input w3-border w3-round" id="password" type="password" placeholder="&#128273 Password" name="password" required />
         <p id="text" style="display: none;">¡CUIDADO! El bloqueo de mayúsculas está activado.</p>
       </section>
 
       <section class="w3-section">
-        <input class="w3-button w3-blue w3-round w3-block" type="submit" name="submit">
+        <input class="w3-button w3-blue w3-round w3-block" type="submit" name="submit" value="Acceder">
       </section>
       
     </form>
