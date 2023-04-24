@@ -67,7 +67,7 @@ $setting = getSetingsById(1);
       </section>
 
       <section class="w3-section">
-        <input class="w3-button w3-blue w3-round w3-block" type="submit" name="submit">
+        <input class="w3-button w3-blue w3-round w3-block" type="submit" name="submit" value="Acceder">
       </section>
       
     </form>
