@@ -45,7 +45,7 @@
       <!-- Tiquets asignados -->
 
         <div class="w3-quarter">
-          <a href="../productos/index.php" style="text-decoration:none">
+          <a href="../tiquets/index.php" style="text-decoration:none">
             <div class="w3-container w3-theme w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -70,7 +70,7 @@
       <!-- Tiquets en espera -->
 
         <div class="w3-quarter">
-          <a href="../productos/index.php" style="text-decoration:none">
+          <a href="../tiquets/index.php" style="text-decoration:none">
             <div class="w3-container w3-purple w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -95,7 +95,7 @@
       <!-- Tiquets pendientes de aprobación -->
 
         <div class="w3-quarter">
-          <a href="../productos/index.php" style="text-decoration:none">
+          <a href="../tiquets/index.php" style="text-decoration:none">
             <div class="w3-container w3-orange w3-text-white w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -126,7 +126,7 @@
       <!-- Tiquets en proceso -->
 
         <div class="w3-quarter">
-          <a href="../productos/index.php" style="text-decoration:none">
+          <a href="../tiquets/index.php" style="text-decoration:none">
             <div class="w3-container w3-green w3-padding-16">
               <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
               <div class="w3-right">
@@ -173,7 +173,7 @@
       <!-- Servicios -->
 
         <div class="w3-quarter">
-          <a href="../categorias/index.php" style="text-decoration:none">
+          <a href="../servicios/index.php" style="text-decoration:none">
             <div class="w3-container w3-indigo w3-text-white w3-padding-16">
               <div class="w3-left"><i class="fas fa-layer-group w3-xxxlarge"></i></div>
               <div class="w3-right">

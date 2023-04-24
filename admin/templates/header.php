@@ -72,14 +72,12 @@ $user = getUsersById($_SESSION['id_user']);
       <div id="clientes" class="w3-hide w3-white w3-theme-l2">
         <a href="../clientes/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Clientes</a>
         <a href="../clientes/create.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Nuevo Cliente</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Tarifas</a>
       </div>
 
       <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('incidencias')"><i class="fas fa-notes-medical"></i> Tiquets de asistencia <i class="w3-right fa fa-caret-down"></i></button>
       <div id="incidencias" class="w3-hide w3-white w3-theme-l2">
         <a href="../tiquets/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">tiquets</a>
         <a href="../tiquets/create.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Nuevo tiquet</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Tarifas</a>
       </div>
 
       <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('servicios')"><i class="fas fa-boxes"></i> Servicios <i class="w3-right fa fa-caret-down"></i></button>
@@ -102,7 +100,7 @@ $user = getUsersById($_SESSION['id_user']);
       </div>
 
       <div class="w3-bar-block">
-        <a href="../statics/index.php" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-chart-line"></i> Statistics</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-chart-line"></i> Statistics</a>
       </div>
     </div>
   </nav>
