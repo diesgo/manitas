@@ -13,23 +13,17 @@
       </div>
 
       <div class="w3-container w3-padding-16 w3-responsive" style="min-height: 594px;">
-<<<<<<< HEAD
-        <div class="w3-content w3-padding-16">
-          <?php  
-=======
         <div class="w3-row w3-padding-16">
           <?php
->>>>>>> 92d9baa1dab2de594f1854a5ff7a2ade5109cc8e
           $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
           $sql = "SELECT * FROM tiquets INNER JOIN clientes ON id_cliente = cliente_id WHERE id_tiquet = " . $_REQUEST['id'];
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
-<<<<<<< HEAD
+
           <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
           <h4>Actuación:</h4>
           <h4><?php echo $row['actuacion']?></h4>
-=======
           <div class="w3-content">
             <section class="w3-section">
             <label>Cliente</label>
