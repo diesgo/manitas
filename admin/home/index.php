@@ -7,7 +7,7 @@
 
       <div class="w3-row w3-padding-16">
         <h2 id="title" class="w3-center w3-text-theme"><b><?php echo $titulo ?></b></h2>
-        <div class="w3-cell-row w3-padding-large">
+        <div class="w3-cell-row w3-center w3-padding-large">
         
           <div class="w3-cell">
             <a class="w3-button w3-green w3-round w3-hover-green w3-margin-top w3-large" href="../tiquets/create.php">
@@ -37,7 +37,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=1" style="text-decoration:none">
             <div class="w3-container w3-red w3-padding-16">
-              <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+              <div class="w3-left"><i class="fas fa-exclamation-triangle w3-xxxlarge"></i></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);

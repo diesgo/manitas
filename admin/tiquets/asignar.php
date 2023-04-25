@@ -42,10 +42,11 @@
       <div class="w3-container w3-padding-32">
 
         <div class="w3-content w3-padding">
-          <form accept-charset="utf-8" action="<?php $PHP_SELF ?>" method="POST" name="chargeProduct" id="chargeProduct" class="w3-theme-l4 w3-round">
+          <h2>Nº de tiquet: <?php echo $tiquet['id_tiquet'] ?></h2>
+          <form accept-charset="utf-8" action="<?php $PHP_SELF ?>" method="POST" name="chargeProduct" id="chargeProduct">
             <div class="w3-content">
 
-              <div class="w3-row w3-padding">
+              <div class="w3-row">
                 <div class="w3-half">
                   <label class="w3-text-theme" for="id_colaborador">Colaborador</label>
                   <select name="id_colaborador" class="w3-select w3-white w3-border w3-border-theme-l4 w3-round">
@@ -58,7 +59,7 @@
                   </select>
                 </div>
               </div>
-              <div class="w3-row w3-padding">
+              <div class="w3-row">
                 <legend for="comentario" class="w3-text-theme-dark w3-medium">Comentario</legend>
                 <textarea class="w3-block w3-border w3-border-theme-light w3-round-large" name="comentario" id="comentario" rows="5" placeholder="(Obligatorio)" required></textarea>
               </div>
