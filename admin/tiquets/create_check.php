@@ -4,8 +4,9 @@
 
       if (isset($_REQUEST['tiquetCliente'])) {
         $id_cliente = $_REQUEST['cliente'];
+        $servicio_id = $_REQUEST['servicio'];
         $actuacion = $_REQUEST['actuacion'];
-        $sql = "INSERT INTO tiquets (cliente_id, actuacion) VALUES ('$id_cliente', '$actuacion')";
+        $sql = "INSERT INTO tiquets (cliente_id, servicio_id, actuacion) VALUES ('$id_cliente', '$servicio_id', '$actuacion')";
         mysqli_query($conn, $sql) or die('<p>Problemas en el insert 1' . mysqli_error($conn) . '</p>');
         $tiquets = getTiquets();
         $num_tiquet = mysqli_num_rows($tiquets);
