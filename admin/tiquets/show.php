@@ -20,6 +20,10 @@
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
+
+          <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
+          <h4>Actuación:</h4>
+          <h4><?php echo $row['actuacion']?></h4>
           <div class="w3-content">
             <section class="w3-section">
             <label>Cliente</label>
@@ -32,6 +36,7 @@
             </textarea>
             </section>
           </div>
+>>>>>>> 92d9baa1dab2de594f1854a5ff7a2ade5109cc8e
         </div>
         <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">

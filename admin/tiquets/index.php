@@ -32,7 +32,12 @@
               <td class="w3-center cat"><?php echo $row["icono"] ?></td>
               <td class='w3-center'><?php echo $row["estado"] ?></td>
               <td class='w3-center'><a class='w3-padding w3-text-theme w3-round' href='show.php?id=<?php echo $row['id_tiquet'] ?>'><i class="fas fa-eye"></i></a></td>
-              <td class='w3-center'><a class='w3-text-green w3-hover-text-orange' href='asignar.php?id=<?php echo $row['id_tiquet'] ?>'><i class="fas fa-user-cog"></i></a></td>
+              <td class='w3-center'>
+                <?php
+                if ($row['estado_id']==1) {
+                  echo "<a class='w3-green w3-button w3-round' href='asignar.php?id=" . $row['id_tiquet'] . "'><i class='far fa-clipboard'></i></a></td>";
+                }
+              ?>
             </tr>
         <?php
           }
