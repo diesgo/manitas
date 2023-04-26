@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-04-2023 a las 13:22:10
+-- Tiempo de generación: 26-04-2023 a las 13:22:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -53,7 +53,7 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellidos_cliente`, `dn
 (1, 'Maxitin', 'Bichitingo', '11111111', 'maxitingo@manitas.es', 12012012, 'Aragón', 360, '-', 'ático', '3', 8009, 'Barcelona', '2023-04-10 16:58:20', '2023-04-18 10:18:25'),
 (2, 'Pepito', 'Grillo', '22222222', 'pegrillo@manitas.es', 123123123, 'Aribau', 191, '', '2', 'B', 0, 'Barcelona', '2023-04-10 17:00:08', '2023-04-11 10:27:03'),
 (3, 'Stevie', 'Wonder', '33333333', '', 234234234, 'Buenavista', 11, '', '9', 'B', 0, 'Barcelona', '2023-04-10 17:00:12', '2023-04-11 10:28:02'),
-(4, 'Aitor', 'Menta', '444444444', 'amenta@manitas.es', 123456789, 'Torrent de les flors', 10, '', '3', '4ª', 0, 'Barcelona', '2023-04-10 17:00:23', '2023-04-18 10:17:19'),
+(4, 'Aitor', 'Menta', '444444444', 'amenta@manitas.es', 123456789, 'Torrent de les flors', 10, '', '3', '4ª', 8070, 'Barcelona', '2023-04-10 17:00:23', '2023-04-25 09:12:52'),
 (5, 'Esther', 'Colero', '', '', 0, '', 0, '', '', '', 0, 'Barcelona', '2023-04-10 17:02:22', '2023-04-11 10:32:56'),
 (6, 'Johny', 'Mentero', '', '', 3, '', 0, '', '', '', 0, 'Barcelona', '2023-04-10 17:12:59', '2023-04-11 10:33:08'),
 (7, 'Cristina', 'Sanz', '', '', 670359848, 'Torrent de les flors', 29, '', 'Entlo', '2ª', 0, 'Barcelona', '2023-04-17 09:37:14', '2023-04-17 09:37:59'),
@@ -62,7 +62,8 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellidos_cliente`, `dn
 (10, 'Sandra', 'Lopez', '', '', 321569785, '', 0, '', '', '', 0, '', '2023-04-21 05:37:00', '2023-04-21 05:37:00'),
 (11, 'Santiago', 'Segura', '', '', 555444111, '', 0, '', '', '', 0, '', '2023-04-21 05:38:58', '2023-04-21 05:38:58'),
 (12, 'Carmen ', 'Avila Blosca', '', '', 648, 'Travessera de dalt', 83, '', '3ª', '2ª', 0, '', '2023-04-21 13:48:17', '2023-04-21 13:48:17'),
-(13, 'Teresa', 'García Fuster', '', 'tgfuste12@gmail.com', 639, 'Avenida Riera de cassoles ', 50, '', '2n', '2ª', 8012, 'Barcelona', '2023-04-21 14:30:34', '2023-04-21 14:30:34');
+(13, 'Teresa', 'García Fuster', '', 'tgfuste12@gmail.com', 639, 'Avenida Riera de cassoles ', 50, '', '2n', '2ª', 8012, 'Barcelona', '2023-04-21 14:30:34', '2023-04-21 14:30:34'),
+(14, 'Enrique', 'Villareal', '', '', 658215479, 'Libertad', 10, '', '', '', 0, 'Barcelona', '2023-04-25 10:38:50', '2023-04-25 10:38:50');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,9 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellidos_cliente`, `dn
 CREATE TABLE `colaboradores` (
   `id_colaborador` int(11) NOT NULL,
   `colaborador` varchar(40) DEFAULT NULL,
-  `descripcion_colaborador` text DEFAULT NULL,
+  `telefono_colaborador` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `servicio_id` int(11) NOT NULL,
+  `descripcion_colaborador` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -82,9 +85,16 @@ CREATE TABLE `colaboradores` (
 -- Volcado de datos para la tabla `colaboradores`
 --
 
-INSERT INTO `colaboradores` (`id_colaborador`, `colaborador`, `descripcion_colaborador`, `date_add`, `date_upd`) VALUES
-(1, 'Externo', '', '2022-03-17 06:17:11', '2022-06-17 07:10:33'),
-(2, 'Interno', '', '2022-04-28 22:07:21', '2022-06-17 07:13:44');
+INSERT INTO `colaboradores` (`id_colaborador`, `colaborador`, `telefono_colaborador`, `servicio_id`, `descripcion_colaborador`, `date_add`, `date_upd`) VALUES
+(1, 'Externo', '654789123', 0, '', '2022-03-17 06:17:11', '2023-04-26 11:03:37'),
+(2, 'Interno', '456789321', 0, '', '2022-04-28 22:07:21', '2023-04-26 11:03:48'),
+(3, 'Andres Segovia', '6541213369', 0, '', '2023-04-26 11:07:45', '2023-04-26 11:07:45'),
+(4, 'Ernesto Sevilla', '6541213369', 0, '', '2023-04-26 11:08:20', '2023-04-26 11:08:52'),
+(5, 'Carpintero', '123456789', 6, '', '2023-04-26 11:09:49', '2023-04-26 11:09:49'),
+(6, 'Electricista', '444555666', 2, '', '2023-04-26 11:10:07', '2023-04-26 11:10:07'),
+(7, 'Fontanero', '777888999', 4, '', '2023-04-26 11:10:28', '2023-04-26 11:10:28'),
+(8, 'Paleta', '123456665', 3, '', '2023-04-26 11:10:59', '2023-04-26 11:10:59'),
+(9, 'Calefaccion', '444888222', 5, '', '2023-04-26 11:12:00', '2023-04-26 11:12:12');
 
 -- --------------------------------------------------------
 
@@ -319,11 +329,14 @@ CREATE TABLE `tiquets` (
 INSERT INTO `tiquets` (`id_tiquet`, `cliente_id`, `servicio_id`, `actuacion`, `estado_id`, `colaborador_id`, `date_add`) VALUES
 (1, 6, 6, 'cambiar ventanas', 2, 1, '2023-04-20 20:36:22'),
 (2, 1, 4, 'El baño pierde agua.', 2, 2, '2023-04-20 20:43:15'),
-(3, 10, 1, 'Tiene una fuga', 1, NULL, '2023-04-21 05:37:00'),
+(3, 10, 4, 'Tiene una fuga', 1, NULL, '2023-04-21 05:37:00'),
 (4, 11, 1, 'No tiene pelo', 1, NULL, '2023-04-21 05:38:58'),
-(5, 9, 1, 'Quiero hacer un escondite secreto para guardar mi fortuna.', 1, NULL, '2023-04-21 05:49:15'),
-(6, 12, 1, 'Desague Ducha. Hay que mirar la pèrduda en la tuberia de agua.', 1, NULL, '2023-04-21 13:49:37'),
-(7, 13, 1, 'Nuevo piso y hay que colocar 2 marcos de puertas, manillas, paños (5) y algunos marcos nuevos de puerta.\r\nEllas tienen pensado lo que quieren colocar, preguntar primero.\r\nTeresa està disponible al mediodia o a partir de las 18:00h.', 1, NULL, '2023-04-21 14:34:50');
+(5, 9, 3, 'Quiero hacer un escondite secreto para guardar mi fortuna.', 3, NULL, '2023-04-21 05:49:15'),
+(6, 12, 4, 'Desague Ducha. Hay que mirar la pèrduda en la tuberia de agua.', 1, NULL, '2023-04-21 13:49:37'),
+(7, 13, 1, 'Nuevo piso y hay que colocar 2 marcos de puertas, manillas, paños (5) y algunos marcos nuevos de puerta.\r\nEllas tienen pensado lo que quieren colocar, preguntar primero.\r\nTeresa està disponible al mediodia o a partir de las 18:00h.', 1, NULL, '2023-04-21 14:34:50'),
+(8, 4, 1, '', 1, NULL, '2023-04-25 09:14:17'),
+(9, 7, 1, '', 1, NULL, '2023-04-25 09:14:56'),
+(10, 14, 1, 'El calentador no funciona', 1, NULL, '2023-04-25 10:38:51');
 
 -- --------------------------------------------------------
 
@@ -344,7 +357,8 @@ CREATE TABLE `tiquet_1` (
 
 INSERT INTO `tiquet_1` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VALUES
 ('2023-04-20 20:36:22', 1, 1, 'Apertura de tiquet'),
-('2023-04-21 06:26:47', 2, 1, 'Asignado a carpinteria de aluminio');
+('2023-04-21 06:26:47', 2, 1, 'Asignado a carpinteria de aluminio'),
+('2023-04-25 10:12:53', 2, 1, 'Asignado a  la flauta de bartolo');
 
 -- --------------------------------------------------------
 
@@ -470,6 +484,66 @@ INSERT INTO `tiquet_7` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VA
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tiquet_8`
+--
+
+CREATE TABLE `tiquet_8` (
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `estado_id` int(11) DEFAULT 1,
+  `colaborador_id` int(11) DEFAULT 1,
+  `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tiquet_8`
+--
+
+INSERT INTO `tiquet_8` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VALUES
+('2023-04-25 09:14:18', 1, 1, 'Apertura de tiquet');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tiquet_9`
+--
+
+CREATE TABLE `tiquet_9` (
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `estado_id` int(11) DEFAULT 1,
+  `colaborador_id` int(11) DEFAULT 1,
+  `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tiquet_9`
+--
+
+INSERT INTO `tiquet_9` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VALUES
+('2023-04-25 09:14:56', 1, 1, 'Apertura de tiquet');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tiquet_10`
+--
+
+CREATE TABLE `tiquet_10` (
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `estado_id` int(11) DEFAULT 1,
+  `colaborador_id` int(11) DEFAULT 1,
+  `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tiquet_10`
+--
+
+INSERT INTO `tiquet_10` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VALUES
+('2023-04-25 10:38:51', 1, 1, 'Apertura de tiquet');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `titulos`
 --
 
@@ -591,7 +665,8 @@ ALTER TABLE `clientes`
 -- Indices de la tabla `colaboradores`
 --
 ALTER TABLE `colaboradores`
-  ADD PRIMARY KEY (`id_colaborador`);
+  ADD PRIMARY KEY (`id_colaborador`),
+  ADD KEY `servicio_id` (`servicio_id`);
 
 --
 -- Indices de la tabla `estados`
@@ -672,13 +747,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `colaboradores`
 --
 ALTER TABLE `colaboradores`
-  MODIFY `id_colaborador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_colaborador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
@@ -720,7 +795,7 @@ ALTER TABLE `temas`
 -- AUTO_INCREMENT de la tabla `tiquets`
 --
 ALTER TABLE `tiquets`
-  MODIFY `id_tiquet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_tiquet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `titulos`
