@@ -1,4 +1,5 @@
       <?php
+      $titulo = "Servicios";
       include '../templates/header.php';
       $servicio = getServiciosById($_GET['id']);
       $titulo = $servicio['servicio'];
@@ -18,7 +19,7 @@
               $result = mysqli_query($conn, $sql);
 
               if (mysqli_num_rows($result) > 0) {
-                echo "<table class='w3-table-all w3-striped w3-responsive w3-small'>
+                echo "<table class='w3-table-all w3-striped w3-responsive '>
                         <thead>
                           <tr class='w3-theme'>
                             <th style='width: 5%'>ID</th>
@@ -70,7 +71,7 @@
               $result = mysqli_query($conn, $sql);
 
               if (mysqli_num_rows($result) > 0) {
-                echo "<table class='w3-table-all w3-striped w3-responsive w3-small'>
+                echo "<table class='w3-table-all w3-striped w3-responsive'>
                         <thead>
                           <tr class='w3-theme'>
                             <th style='width: 5%'>ID</th>
