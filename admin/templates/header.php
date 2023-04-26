@@ -63,11 +63,12 @@ $user = getUsersById($_SESSION['id_user']);
     </div>
 
     <div class="w3-container w3-theme">
-      <h5 class="w3-text-white"><i class="fas fa-tachometer-alt"></i> Panel de control</h5>
+      <h5 class="w3-text-white"><i class="fas fa-tools"></i> Administración</h5>
     </div>
 
     <div class="w3-bar-block">
       <a href="../home/index.php" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-home"></i> Home</a>
+      <a href="../../select.php" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-tachometer-alt"></i> Inicio</a>
 
       <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropdown('clientes')"><i class="fa fa-users a-fw"></i> Clientes <i class="w3-right fa fa-caret-down"></i></button>
       <div id="clientes" class="w3-hide w3-white w3-theme-l2">
@@ -112,4 +113,4 @@ $user = getUsersById($_SESSION['id_user']);
 
   <script src="../../js/header.js"></script>
 
-  <div class='w3-main' style='margin-left:300px;margin-top:43px'>
+  <div class='w3-main' style='margin-left:300px;margin-top:43px;min-height:865px;'>

@@ -36,7 +36,6 @@
             </textarea>
             </section>
           </div>
->>>>>>> 92d9baa1dab2de594f1854a5ff7a2ade5109cc8e
         </div>
         <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">

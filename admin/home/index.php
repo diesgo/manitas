@@ -37,7 +37,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=1" style="text-decoration:none">
             <div class="w3-container w3-red w3-padding-16">
-              <div class="w3-left"><i class="fas fa-exclamation-triangle w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-exclamation-triangle"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -62,7 +62,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=2" style="text-decoration:none">
             <div class="w3-container w3-theme w3-padding-16">
-              <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-boxes"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -87,7 +87,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=4" style="text-decoration:none">
             <div class="w3-container w3-purple w3-padding-16">
-              <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-pause-circle"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -112,7 +112,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=5" style="text-decoration:none">
             <div class="w3-container w3-orange w3-text-white w3-padding-16">
-              <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-stopwatch"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -143,7 +143,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=3" style="text-decoration:none">
             <div class="w3-container w3-green w3-padding-16">
-              <div class="w3-left"><i class="fas fa-boxes w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-cogs"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
@@ -168,7 +168,7 @@
         <div class="w3-quarter">
           <a href="../clientes/index.php" style="text-decoration:none">
             <div class="w3-container w3-teal w3-padding-16">
-              <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fa fa-users"></i></span></div>
               <div class="w3-right">
                 <?php
                 $clientes = getNumClientes();
@@ -190,7 +190,7 @@
         <div class="w3-quarter">
           <a href="../servicios/index.php" style="text-decoration:none">
             <div class="w3-container w3-indigo w3-text-white w3-padding-16">
-              <div class="w3-left"><i class="fas fa-layer-group w3-xxxlarge"></i></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-layer-group"></i></span></div>
               <div class="w3-right">
                 <?php
                 $servicios = getServicios();

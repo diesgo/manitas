@@ -38,6 +38,11 @@ $user = getUsersById($_SESSION['id_user']);
 
 <body class="w3-theme-light font-<?php echo $user['fuente']; ?>">
   <div>
+    <div class="w3-row w3-padding">
+      <div class="w3-padding"></div>
+      <a href="login/logout.php" class="w3-right w3-btn w3-hover-text-theme ">Cerrar sesión <span class="w3-xlarge w3-padding"><i class="fas fa-sign-out-alt"></i></span></a>
+
+    </div>
 
     <div class="w3-cell-row w3-padding w3-center w3-margin-bottom">
       <div class="w3-content w3-theme w3-padding w3-margin-top w3-card w3-round">
@@ -51,50 +56,55 @@ $user = getUsersById($_SESSION['id_user']);
     <div class="w3-content center">
 
       <div class="w3-row w3-padding-large">
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="admin/clientes/index.php">
-            <h4 class="w3-center w3-text-theme">Clientes</h4>
-            <i class="fas fa-users w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
-          </a>
-        </div>
 
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="recepcion/index.php">
-            <h4 class="w3-center w3-text-theme">Tiquets</h4>
-            <i class="fas fa-concierge-bell w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
-          </a>
-        </div>
-
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="dispensario/home/index.php">
+        <div class="w3-col l4 m4 s6 w3-padding">
+          <a href="admin/tiquets/create.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
             <h4 class="w3-center w3-text-theme">Nuevo tiquet</h4>
-            <i class="fas fa-store w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
+            <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
+              <i class="far fa-clipboard"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="w3-col l4 m4 s6 w3-padding">
+          <a href="admin/clientes/create.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
+            <h4 class="w3-center w3-text-theme">Nuevo cliente</h4>
+            <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
+              <i class="fas fa-user-plus"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="w3-col l4 m4 s6 w3-padding">
+          <a href="admin/home/index.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
+            <h4 class="w3-center w3-text-theme">Administración</h4>
+            <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
+              <i class="fas fa-cogs"></i>
+            </span>
           </a>
         </div>
 
       </div>
 
       <div class="w3-row w3-padding-large">
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="admin/home/index.php">
-            <h4 class="w3-center w3-text-theme">Administración</h4>
-            <i class="fas fa-cogs w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
+
+      <div class="w3-col l4 m4 s6 w3-padding">
+          <a href="admin/tiquets/index.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
+            <h4 class="w3-center w3-text-theme">Tiquets</h4>
+            <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
+              <i class="fas fa-clipboard-list"></i>
+            </span>
           </a>
         </div>
 
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="recepcion/index.php">
-            <h4 class="w3-center w3-text-theme">Recepción</h4>
-            <i class="fas fa-concierge-bell w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
+        <div class="w3-col l4 m4 s6 w3-padding">
+          <a href="admin/clientes/index.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
+            <h4 class="w3-center w3-text-theme">Clientes</h4>
+            <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
+              <i class="fas fa-users"></i>
+            </span>
           </a>
-        </div>
-
-        <div class="w3-col l4 m4 s12 w3-padding">
-          <a class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card" href="dispensario/home/index.php">
-            <h4 class="w3-center w3-text-theme">Dispensario</h4>
-            <i class="fas fa-store w3-center w3-xxxlarge w3-margin-bottom w3-text-theme"></i>
-          </a>
-        </div>
+        </div>       
 
       </div>
     </div>

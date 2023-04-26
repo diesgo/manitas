@@ -1,5 +1,5 @@
 <?php
-      $titulo = 'Tiquets asignados';
+      $titulo = 'Estado de los tiquets';
       include '../templates/header.php';
       include '../templates/header_index.php';
       ?>

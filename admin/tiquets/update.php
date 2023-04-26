@@ -95,6 +95,7 @@
               <?php
               include '../templates/nav_btn_upd.php';
               ?>
+            </div>
           </form>
         </div>
       </div>
