@@ -1,1 +1,0 @@
-<a class="w3-button w3-blue w3-round-large w3-hover-green w3-margin-top " href="../productos/create.php"><i class="fas fa-plus-circle"></i> Nuevo artículo</a>
