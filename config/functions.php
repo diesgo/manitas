@@ -177,9 +177,8 @@ function getUsersById($id){
 
 function getUsers(){
 	$mysqli = openConex();
-	$result = $mysqli->query('SELECT * 
-  INNER JOIN grupo_usuarios ON id = grupo_id
-  FROM users');
+	$result = $mysqli->query('SELECT * FROM users
+  INNER JOIN grupo_usuarios ON id_grupo = grupo_id');
 	return $result;
 }
 

@@ -12,11 +12,11 @@
           echo "<script>alert('Antes de asignar un tiquet, debes especificar el servicio')</script>";
         } else {
           $id = $tiquet['id_tiquet'];
-          $colaborador = $_REQUEST['id_colaborador'];
+          $user = $_REQUEST['id_user'];
           $comentario = $_REQUEST['comentario'];
-          $sql = "UPDATE tiquets SET estado_id = 2, colaborador_id = " . $colaborador . " WHERE id_tiquet = " . $id;
+          $sql = "UPDATE tiquets SET estado_id = 2, user_id =  '$user' WHERE id_tiquet = '$id'";
           mysqli_query(openConex(), $sql);
-          $sql = "INSERT INTO tiquet_" . $_REQUEST['id'] . " (estado_id, colaborador_id, comentario) VALUES (2, '" . $colaborador . "', '" . $comentario . "')";
+          $sql = "INSERT INTO tiquet_" . $_REQUEST['id'] . " (estado_id, user_id, comentario) VALUES (2, '" . $user . "', '" . $comentario . "')";
           $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
           if ($conn->query($sql) === TRUE) {
             echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
@@ -48,13 +48,13 @@
 
               <div class="w3-row">
                 <div class="w3-half">
-                  <label class="w3-text-theme" for="id_colaborador">Colaborador</label>
-                  <select name="id_colaborador" class="w3-select w3-white w3-border w3-border-theme-l4 w3-round">
+                  <label class="w3-text-theme" for="id_user">user</label>
+                  <select name="id_user" class="w3-select w3-white w3-border w3-border-theme-l4 w3-round">
                     <?php
-                    $colaboradores = getColaboradores();
-                    foreach ($colaboradores as $colaborador) :
+                    $users = getUsers();
+                    foreach ($users as $user) :
                     ?>
-                      <option value=<?php echo $colaborador['id_colaborador']; ?>><?php echo $colaborador['colaborador'] ?></option>
+                      <option value=<?php echo $user['id_user']; ?>><?php echo $user['username'] ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -64,11 +64,14 @@
                 <textarea class="w3-block w3-border w3-border-theme-light w3-round-large" name="comentario" id="comentario" rows="5" placeholder="(Obligatorio)" required></textarea>
               </div>
               <div class="w3-row">
-
-                <?php
-                include '../templates/nav_btn_upd.php';
-                ?>
-
+                <div class="w3-row w3-padding-24">
+                  <div class="w3-col l6 m6 s6 w3-right-align">
+                    <a href="index.php" class="w3-button w3-margin w3-border w3-border-theme w3-round w3-theme w3-padding w3-small" style="width: 100px;">Volver</a>
+                  </div>
+                  <div class="w3-col l6 m6 s6 w3-left-align">
+                    <input type='submit' value='Actualizar' name='update' class='w3-button w3-margin w3-border w3-border-theme w3-round w3-theme w3-padding w3-small' style='width: 100px;'>
+                  </div>
+                </div>
               </div>
 
             </div>

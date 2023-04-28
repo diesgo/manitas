@@ -13,7 +13,7 @@
         $sql = "CREATE TABLE tiquet_$num_tiquet  (
           fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           estado_id INT(11) DEFAULT 1,
-          colaborador_id int(11) DEFAULT 1,
+          user_id int(11) DEFAULT 1,
           comentario VARCHAR(255) NOT NULL DEFAULT 'Apertura de tiquet'
           )";
         mysqli_query($conn, $sql) or die('<p>Problemas en el create' . mysqli_error($conn) . '</p>');
