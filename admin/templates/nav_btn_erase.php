@@ -5,11 +5,7 @@
                                   </div>
                                   <div class="w3-col l6 m6 s6 w3-padding">
                                     <?php
-                                    if ($user['grupo_id'] == 1) {
                                       echo "<input type='submit' value='Eliminar' name='erase' class='w3-button w3-border w3-border-theme w3-text-theme w3-round w3-hover-theme' style='width: 100px;'>";
-                                    } else {
-                                      echo "<input type='button' value='Eliminar' class='w3-button w3-border w3-border-theme w3-text-theme w3-round w3-hover-theme' style='width: 100px;'>";
-                                    }
                                     ?>
                                     
                                   </div>

@@ -34,9 +34,12 @@ require('../config/conexion.php');
                     <?php
                     $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
                     $sql = "SELECT * FROM tiquets WHERE colaborador_id =" . $_SESSION['id_user'];
-                    $result = mysqli_query($conex, $sql);
+                    $result = mysqli_query($conex, $sql) OR die("Error en la consulta");
                     if (mysqli_num_rows($result) > 0) {
+                        
                         echo "<tr><td>3</td><td>Tiene una fuga</td><td>comentario</td><td>Estado</td></tr>";
+                    } else {
+                        echo "entro";
                     }
 
                     ?>

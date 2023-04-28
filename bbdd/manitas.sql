@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2023 a las 13:22:43
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Servidor: localhost
+-- Tiempo de generación: 28-04-2023 a las 08:17:08
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `clientes` (
   `poblacion` varchar(40) DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `clientes`
@@ -74,12 +74,12 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellidos_cliente`, `dn
 CREATE TABLE `colaboradores` (
   `id_colaborador` int(11) NOT NULL,
   `colaborador` varchar(40) DEFAULT NULL,
-  `telefono_colaborador` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telefono_colaborador` varchar(11) CHARACTER SET utf8mb4 NOT NULL,
   `servicio_id` int(11) NOT NULL,
-  `descripcion_colaborador` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `descripcion_colaborador` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `colaboradores`
@@ -108,7 +108,7 @@ CREATE TABLE `estados` (
   `descripcion` text DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `estados`
@@ -132,7 +132,7 @@ CREATE TABLE `fuentes` (
   `id_fuente` int(11) NOT NULL,
   `fuente` varchar(40) NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `fuentes`
@@ -175,7 +175,7 @@ INSERT INTO `fuentes` (`id_fuente`, `fuente`, `date_add`) VALUES
 CREATE TABLE `grupo_usuarios` (
   `id_grupo` int(11) NOT NULL,
   `grupo` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `grupo_usuarios`
@@ -196,11 +196,11 @@ INSERT INTO `grupo_usuarios` (`id_grupo`, `grupo`) VALUES
 CREATE TABLE `servicios` (
   `id_servicio` int(11) NOT NULL,
   `servicio` varchar(40) DEFAULT NULL,
-  `icono` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '<i class="fas fa-question"></i>',
-  `descripcion_servicio` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `icono` varchar(255) CHARACTER SET utf8mb4 DEFAULT '<i class="fas fa-question"></i>',
+  `descripcion_servicio` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `servicios`
@@ -227,7 +227,7 @@ CREATE TABLE `settings` (
   `titulo_id` int(11) NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `settings`
@@ -247,7 +247,7 @@ CREATE TABLE `temas` (
   `color` varchar(40) NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `temas`
@@ -320,7 +320,7 @@ CREATE TABLE `tiquets` (
   `estado_id` int(11) NOT NULL DEFAULT 1,
   `colaborador_id` int(11) DEFAULT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tiquets`
@@ -332,7 +332,7 @@ INSERT INTO `tiquets` (`id_tiquet`, `cliente_id`, `servicio_id`, `actuacion`, `e
 (3, 10, 4, 'Tiene una fuga', 1, NULL, '2023-04-21 05:37:00'),
 (4, 11, 1, 'No tiene pelo', 1, NULL, '2023-04-21 05:38:58'),
 (5, 9, 3, 'Quiero hacer un escondite secreto para guardar mi fortuna.', 3, NULL, '2023-04-21 05:49:15'),
-(6, 12, 4, 'Desague Ducha. Hay que mirar la pèrduda en la tuberia de agua.', 1, NULL, '2023-04-21 13:49:37'),
+(6, 12, 4, 'Desague Ducha. Hay que mirar la pèrduda en la tuberia de agua.', 2, 7, '2023-04-21 13:49:37'),
 (7, 13, 1, 'Nuevo piso y hay que colocar 2 marcos de puertas, manillas, paños (5) y algunos marcos nuevos de puerta.\r\nEllas tienen pensado lo que quieren colocar, preguntar primero.\r\nTeresa està disponible al mediodia o a partir de las 18:00h.', 1, NULL, '2023-04-21 14:34:50'),
 (8, 4, 1, '', 1, NULL, '2023-04-25 09:14:17'),
 (9, 7, 1, '', 1, NULL, '2023-04-25 09:14:56'),
@@ -349,7 +349,7 @@ CREATE TABLE `tiquet_1` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_1`
@@ -371,7 +371,7 @@ CREATE TABLE `tiquet_2` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_2`
@@ -392,7 +392,7 @@ CREATE TABLE `tiquet_3` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_3`
@@ -412,7 +412,7 @@ CREATE TABLE `tiquet_4` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_4`
@@ -432,7 +432,7 @@ CREATE TABLE `tiquet_5` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_5`
@@ -452,14 +452,15 @@ CREATE TABLE `tiquet_6` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_6`
 --
 
 INSERT INTO `tiquet_6` (`fecha`, `estado_id`, `colaborador_id`, `comentario`) VALUES
-('2023-04-21 13:49:38', 1, 1, 'Apertura de tiquet');
+('2023-04-21 13:49:38', 1, 1, 'Apertura de tiquet'),
+('2023-04-27 18:39:43', 2, 7, 'Asignado a Fontanero');
 
 -- --------------------------------------------------------
 
@@ -472,7 +473,7 @@ CREATE TABLE `tiquet_7` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_7`
@@ -492,7 +493,7 @@ CREATE TABLE `tiquet_8` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_8`
@@ -512,7 +513,7 @@ CREATE TABLE `tiquet_9` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_9`
@@ -532,7 +533,7 @@ CREATE TABLE `tiquet_10` (
   `estado_id` int(11) DEFAULT 1,
   `colaborador_id` int(11) DEFAULT 1,
   `comentario` varchar(255) NOT NULL DEFAULT 'Apertura de tiquet'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tiquet_10`
@@ -551,7 +552,7 @@ CREATE TABLE `titulos` (
   `id_titulo` int(11) NOT NULL,
   `titulo` varchar(40) NOT NULL,
   `date_add` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `titulos`
@@ -597,26 +598,32 @@ CREATE TABLE `users` (
   `nombre` varchar(40) DEFAULT NULL,
   `apellidos` varchar(150) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
+  `telefono` varchar(11) CHARACTER SET utf8mb4 DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `grupo_id` int(11) NOT NULL DEFAULT 1,
+  `servicio_id` int(11) DEFAULT 1,
   `tema_id` int(11) DEFAULT 50,
-  `fuente_id` int(11) NOT NULL DEFAULT 21,
-  `titulo_id` int(11) NOT NULL DEFAULT 7,
+  `fuente_id` int(11) DEFAULT 21,
+  `titulo_id` int(11) DEFAULT 7,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `nombre`, `apellidos`, `email`, `password`, `grupo_id`, `tema_id`, `fuente_id`, `titulo_id`, `date_add`, `date_upd`) VALUES
-(1, 'admin', 'Diego', 'Perea', 'admin@ccsm.es', '$2y$10$8oktY8Sb0N3hf2FmQkP6G.FrTd6axSR26oBP5uq0Osjaa98yGCUji', 1, 33, 16, 15, '2022-03-04 23:22:50', '2023-04-18 10:02:07'),
-(2, 'diesgo', '', '', 'diesgo@gmail.com', 'dimapema', 1, 49, 25, 11, '2022-03-05 07:37:48', '2022-11-27 00:07:33'),
-(8, 'ddbold', '', '', 'ddbold@ccsm.es', '$2y$10$7yqCQhKvEuY7KvuUkZww8.yRjV03NviycCpkno7zSYQAZap5EIRee', 2, 5, 21, 5, '2022-05-09 10:52:01', '2022-07-16 00:07:01'),
-(9, 'rafa', '', '', 'rafa@ccsm.es', '$2y$10$txknwHhEWqKCS2til953kOCK7QblIl7y4H9jPGbUX3FM7h7NBVoam', 3, 15, 20, 20, '2022-06-05 17:29:41', '2022-07-03 12:29:50'),
-(10, 'invitado', 'John', 'Doe', 'invitado@ccsm.es', '$2y$10$UHBfTuw3eFydyJF/8104/uq..dj.27xnpZgt8Dg3uua60EW5ePc/u', 4, 51, 15, 4, '2022-06-18 05:33:29', '2022-09-01 19:54:41'),
-(11, 'guess', '', '', 'guess@ccsm.es', '$2y$10$hSaTNUKusoCn7efe7ChHje5hdBsQfyHHZYD5.SaQuvfJiHMyEaaky', 4, 11, 3, 16, '2022-10-11 00:08:12', '2022-10-31 11:11:18');
+INSERT INTO `users` (`id_user`, `username`, `nombre`, `apellidos`, `email`, `telefono`, `password`, `grupo_id`, `servicio_id`, `tema_id`, `fuente_id`, `titulo_id`, `date_add`, `date_upd`) VALUES
+(1, 'admin', 'Diego', 'Perea', 'admin@ccsm.es', '', '$2y$10$8oktY8Sb0N3hf2FmQkP6G.FrTd6axSR26oBP5uq0Osjaa98yGCUji', 1, 1, 33, 16, 15, '2022-03-04 23:22:50', '2023-04-28 06:04:09'),
+(2, 'diesgo', '', '', 'diesgo@gmail.com', '', '$2y$10$nMyWQPkygkN6mq0J3s8e0OYsCQYwwURnOy5iAZWnU/KdFz4Cnj9DW', 1, 1, 49, 25, 11, '2022-03-05 07:37:48', '2023-04-28 06:04:19'),
+(8, 'ddbold', '', '', 'ddbold@ccsm.es', '', '$2y$10$7yqCQhKvEuY7KvuUkZww8.yRjV03NviycCpkno7zSYQAZap5EIRee', 2, NULL, 5, 21, 5, '2022-05-09 10:52:01', '2022-07-16 00:07:01'),
+(9, 'rafa', '', '', 'rafa@ccsm.es', '', '$2y$10$txknwHhEWqKCS2til953kOCK7QblIl7y4H9jPGbUX3FM7h7NBVoam', 3, NULL, 15, 20, 20, '2022-06-05 17:29:41', '2022-07-03 12:29:50'),
+(10, 'invitado', 'John', 'Doe', 'invitado@ccsm.es', '', '$2y$10$UHBfTuw3eFydyJF/8104/uq..dj.27xnpZgt8Dg3uua60EW5ePc/u', 4, NULL, 51, 15, 4, '2022-06-18 05:33:29', '2022-09-01 19:54:41'),
+(11, 'guess', '', '', 'guess@ccsm.es', '', '$2y$10$hSaTNUKusoCn7efe7ChHje5hdBsQfyHHZYD5.SaQuvfJiHMyEaaky', 4, NULL, 11, 3, 16, '2022-10-11 00:08:12', '2023-04-27 18:30:27'),
+(12, 'fontanero', '', '', 'fontanero@manitas.es', '', '$2y$10$jmfqbS5jwnb07FLDFsOT8eopr4awfmV2A6Z6hakiJ7KF1JG2siyl.', 2, 4, 50, 21, 7, '2023-04-27 14:57:04', '2023-04-28 06:03:26'),
+(13, 'carpintero', '', '', 'carpintero@manitas.es', '', '$2y$10$6nhOIFeRnYSASwIHroo7Y.MHfZORAe1bdsDuiAi7gNU2DqugNFbVy', 2, 6, 50, 21, 7, '2023-04-27 15:05:45', '2023-04-28 06:03:06'),
+(16, 'paleta', NULL, NULL, 'paleta@manitas.es', '', '$2y$10$sAyq6WQMXYMof0hnZ86e8O5QiP5TbczxLBsZnpojZicLD.49F3BIO', 2, 3, 50, 21, 7, '2023-04-27 17:43:16', '2023-04-28 06:03:48'),
+(17, 'calefaccion', NULL, NULL, 'calefaccion@manitas.es', '658987412', '$2y$10$NSqulYED3nL/fcLvDRpuQOOg4fYwPw6/zrctHC99DPOXPN4DBJBvG', 2, 5, 50, 21, 7, '2023-04-27 22:51:04', '2023-04-27 22:51:04');
 
 -- --------------------------------------------------------
 
@@ -637,7 +644,7 @@ CREATE TABLE `usuarios` (
   `online` tinyint(1) NOT NULL,
   `date_add` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_upd` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -731,7 +738,8 @@ ALTER TABLE `users`
   ADD KEY `grupo_id` (`grupo_id`),
   ADD KEY `tema_id` (`tema_id`),
   ADD KEY `fuente_id` (`fuente_id`),
-  ADD KEY `titulo_id` (`titulo_id`);
+  ADD KEY `titulo_id` (`titulo_id`),
+  ADD KEY `servicio_id` (`servicio_id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -807,7 +815,7 @@ ALTER TABLE `titulos`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

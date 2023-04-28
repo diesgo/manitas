@@ -84,21 +84,21 @@
                     </select>
                   </div>
                 </div>
-                <div class="w3-col l6 m6">
+                <!-- <div class="w3-col l6 m6">
                   <div class="w3-padding">
                     <label for="language" class="w3-text-theme">Idioma de la interfaz</label>
                     <select name="language" id="language" class="w3-select w3-white">
                       <option value=""></option>
-                      <!-- <?php
+                      <?php
                             $grupos = getGrupoUsuarios();
                             foreach ($grupos as $grupo) :
                             ?>
                         <option value=<?php echo $grupo['id']; ?>><?php echo $grupo['grupo'] ?></option>
-                      <?php endforeach; ?> -->
+                      <?php endforeach; ?>
                     </select>
 
                   </div>
-                </div>
+                </div> -->
               </div>
 
               <!-- COLOR DE LA INTERFAZ -->

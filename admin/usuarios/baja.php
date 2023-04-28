@@ -3,11 +3,11 @@
       include '../templates/header.php';
       $user = getUsersById($_GET['id_user']);
 
-      if (isset($_POST['bajaButton'])) {
+      if (isset($_POST['erase'])) {
         $id_user = $user['id_user'];
         $sql = "DELETE FROM users WHERE id_user='$id_user'";
-        mysqli_query($conex, $sql);
-        // echo "<script>location.replace('index.php');</script>";
+        mysqli_query(openConex(), $sql);
+        echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
       }
       ?>
 
@@ -26,7 +26,7 @@
           <div class="w3-row">
 
             <div class="w3-col w3-padding">
-              <label for='nombre_user' class="w3-text-theme w3-medium">Servicio</label>
+              <label for='nombre_user' class="w3-text-theme w3-medium">Usuario</label>
               <input class="w3-input w3-border w3-round" type="text" name="nombre_user" placeholder="<?php echo $user['username']; ?>" value="<?php echo $user['username']; ?>">
             </div>
 

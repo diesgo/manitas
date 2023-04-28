@@ -16,17 +16,18 @@ if (isset($_POST['update'])) {
   $titulos = $_POST['titulos'];
   $sql = "UPDATE users SET
   username = '" . $username . "',
-  email = '" . $email . "',
   nombre = '" . $nombre . "',
   apellidos = '" . $apellido . "',
+  email = '" . $email . "',
   grupo_id = '" . $grupo . "',
-  color_id = '" . $custom_color . "',
+  tema_id = '" . $custom_color . "',
   fuente_id = '" . $fuente . "',
-  titulos_id = '" . $titulos . "'
+  titulo_id = '" . $titulos . "'
   WHERE id_user = " . $id . ";";
-  echo "<h3 class='w3-text-green'><i class='w3-xlarge fas fa-check'></i> Los cambios se han guardado satisfactoriamente</h3>";
-  echo "<script>location.replace('./index.php');</script>";
   mysqli_query($conex, $sql) or die("Error al ejecutar la consulta");
+  echo "<script>alert('Los cambios se han guardado satisfactoriamente.');</script>";
+  echo "<script>function returnIndex(){location.replace('index.php')}; returnIndex();</script>";
+  
 } else {
   if (!isset($_POST['id_user'])) {
     $sql = "SELECT min(id_user) FROM users";

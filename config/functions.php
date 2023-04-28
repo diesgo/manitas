@@ -6,8 +6,8 @@ require_once ('config.php');
 
 function openConex(){
 	$conex=new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
-	mysqli_set_charset($conex,'utf8');
-    return $conex;
+  mysqli_set_charset($conex, 'utf8');
+  return $conex;
 }
 
 function getSetings(){

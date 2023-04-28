@@ -17,7 +17,6 @@ $user = getUsersById($_SESSION['id_user']);
   <link rel="stylesheet" href="../../css/checkbox.css">
   <link rel="stylesheet" href="../../css/themes/w3-theme-<?php echo $user['color']; ?>.css">
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/editor.css">
 </head>
 <style>
   label,
