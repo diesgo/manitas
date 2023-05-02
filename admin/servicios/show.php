@@ -2,7 +2,7 @@
       $titulo = "Servicios";
       include '../templates/header.php';
       $servicio = getServiciosById($_GET['id']);
-      $titulo = $servicio['servicio'];
+      // $titulo = $servicio['servicio'];
       include '../templates/header_title.php';
       ?>
 
@@ -15,7 +15,7 @@
               INNER JOIN clientes ON id_cliente = cliente_id
               INNER JOIN estados ON id_estado = estado_id
               INNER JOIN servicios ON id_servicio = servicio_id
-              WHERE servicio_id = " . $servicio['id_servicio'] . " AND estado_id = 1";
+              WHERE servicio_id = '$servicio[id_servicio]' AND estado_id = 1";
               $result = mysqli_query($conn, $sql);
 
               if (mysqli_num_rows($result) > 0) {

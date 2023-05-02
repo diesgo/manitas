@@ -20,24 +20,15 @@
           $result = mysqli_query($conex, $sql);
           $row = mysqli_fetch_assoc($result);
           ?>
+          <label for="nombre_cliente" class="w3-text-theme">Cliente</label>
+          <input type="text" name="nombre_cliente" id="nombre_cliente" value="<?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?>" class="w3-input w3-border w3-border-theme">
 
-          <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
-          <h4>Actuación:</h4>
-          <h4><?php echo $row['actuacion']?></h4>
-          <div class="w3-content">
-            <section class="w3-section">
-            <label>Cliente</label>
-            <input type="text" value="<?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?>" class="w3-input w3-border w3-border-theme w3-round">
-            </section>
-            <section class="w3-section">
-            <label>Actuación a realizar</label>
-            <textarea class="w3-block w3-border w3-border-theme w3-round" rows="5">
+          <legend class="w3-text-theme">Actuación:</legend>
+          <textarea class="w3-block w3-border w3-border-theme w3-round" rows="5">
               <?php echo $row['actuacion'] ?>
             </textarea>
-            </section>
-          </div>
         </div>
-        <table id="grid" class="w3-content w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
+        <table id="grid" class="w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
           <thead class="w3-theme">
             <tr>
               <th style="width:15%" class="w3-center" onclick="sortTable(0)"></i>Fecha</th>

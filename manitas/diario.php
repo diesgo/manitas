@@ -14,7 +14,7 @@ if (isset($_REQUEST['update'])) {
     WHERE id_tiquet = '$_REQUEST[tiquet_id]'";
     mysqli_query($conex, $sql) or die("Error al ejecutar la consulta");
     echo "<h3 class='w3-text-green'><i class='w3-xlarge fas fa-check'></i> Los cambios se han guardado satisfactoriamente</h3>";
-    // echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+    echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
 } else {
     if (!isset($_REQUEST['id_tiquet'])) {
         $sql = "SELECT min(id_tiquet) FROM tiquets";
