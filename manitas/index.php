@@ -21,35 +21,6 @@ require('../config/conexion.php');
             <h4>Bienvenido <?php echo $_SESSION['username'] ?></h4>
             <a href="../admin/usuarios/exit.php" class="w3-bar-item w3-button w3-theme-d3 w3-hover-theme"><i class="fas fa-sign-out-alt"></i></a>
         </div>
-        <div class="w3-row">
-            <div class="w3-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>id tiquet</th>
-                            <th>Actuación</th>
-                            <th>Último comentario</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
-                        $sql = "SELECT * FROM tiquets WHERE user_id =" . $_SESSION['id_user'];
-                        $result = mysqli_query($conex, $sql) or die("Error en la consulta");
-                        if (mysqli_num_rows($result) > 0) {
-
-                            echo "<tr><td>3</td><td>Tiene una fuga</td><td>comentario</td><td>Estado</td></tr>";
-                        } else {
-                            echo "entro";
-                        }
-
-                        ?>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
     <div class="w3-container">
 
@@ -62,13 +33,18 @@ require('../config/conexion.php');
                 WHERE user_id =" . $_SESSION['id_user'];
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-            echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'><thead class='w3-theme'><tr>
-      <th width='5%' class='w3-center' onclick='sortTable(0)'></i>tiquet</th>
-      <th width='15%' onclick='sortTable(1)'>Cliente </th>
-      <th width='65%'>Incidencia</th>
-      <th width='5%' class='w3-center' onclick='sortTable(2)'>Servicio </th>
-      <th width='5%' class='w3-center'>Estado</th>
-      <th width='5%' class='w3-center'>Diario</th></tr></thead><tbody>";
+            echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'>
+                    <thead class='w3-theme'>
+                        <tr>
+                            <th width='5%' class='w3-center' onclick='sortTable(0)'></i>tiquet</th>
+                            <th width='15%' onclick='sortTable(1)'>Cliente </th>
+                            <th width='60%'>Último comentario</th>
+                            <th width='5%' class='w3-center' onclick='sortTable(2)'>Servicio </th>
+                            <th width='10%' class='w3-center'>Estado</th>
+                            <th width='5%' class='w3-center'>Diario</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
             // output data of each row
             while ($row = mysqli_fetch_assoc($result)) {
 
@@ -80,31 +56,32 @@ require('../config/conexion.php');
                     <td class='w3-center'>
                         <?php
                         if ($row['servicio_id'] == 1) {
-                            echo "<a class='w3-green w3-button w3-round' href='update.php?id=" . $row['id_tiquet'] . "'>Definir servicio</a></td>";
+                            echo "<a class='w3-green w3-button w3-round' href='update.php?id=" . $row['id_tiquet'] . "'>Definir servicio</a>";
                         } else {
-                            echo $row["icono"];
+                            echo $row['icono'];
                         }
                         ?>
+                    </td>
                     <td class='w3-center'>
                         <?php
                         if ($row['estado_id'] == 1) {
-                            echo "<a class='w3-green w3-button w3-round' href='asignar.php?id=" . $row['id_tiquet'] . "'>Asignar</a></td>";
+                            echo "<a class='w3-green w3-button w3-round' href='asignar.php?id=" . $row['id_tiquet'] . "'>Asignar</a>";
                         } else {
-                            echo "Asignado </td>";
+                            echo $row['estado'];
                         }
                         ?>
+                    </td>
                     <td class='w3-center'><a class='w3-padding w3-text-theme w3-round' href='diario.php?tiquet_id=<?php echo $row['id_tiquet'] ?>'><i class="fas fa-book-reader"></i></a></td>
 
                 </tr>
         <?php
             }
+            echo "</tbody></table>";
         } else {
             echo "<h4 class='w3-center'>No se han encontrado registros.</h4>";
         }
         mysqli_close($conn);
         ?>
-        </tbody>
-        </table>
     </div>
 </body>
 

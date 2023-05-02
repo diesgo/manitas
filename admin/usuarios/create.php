@@ -5,7 +5,7 @@
     if (isset($_REQUEST['addnew'])) {
       $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
       $sql = "SELECT * FROM users WHERE email = '$_REQUEST[email]'";
-      $registro = mysqli_query($conn, $sql) or die("problemas en el select" . mysqli_error($conne)); // Ejecutar la query
+      $registro = mysqli_query($conn, $sql) or die("problemas en el select" . mysqli_error($conn)); // Ejecutar la query
       if (mysqli_num_rows($registro) == 0) {
         $username = $_REQUEST['username'];
       $email = $_REQUEST['email'];

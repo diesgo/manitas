@@ -4,16 +4,17 @@ require('../config/conexion.php');
 require_once('../config/functions.php');
 
 if (isset($_REQUEST['update'])) {
-    $id = $tiquet;
     $estado = $_REQUEST['estado'];
     $actuacion = $_REQUEST['actuacion'];
+    $sql="INSERT INTO tiquet_" . $_REQUEST['tiquet_id'] . " (estado_id, user_id, comentario) VALUES ('$estado', '$_SESSION[id_user]', '$actuacion')";
+    mysqli_query($conex, $sql) or die ("Error en el Insert. " . mysqli_error($conex));
     $sql = "UPDATE tiquets SET
     estado_id = '$estado',
     actuacion = '$actuacion'
-    WHERE id_tiquet = " . $_REQUEST['id_tiquet'] . ";";
+    WHERE id_tiquet = '$_REQUEST[tiquet_id]'";
+    mysqli_query($conex, $sql) or die("Error al ejecutar la consulta");
     echo "<h3 class='w3-text-green'><i class='w3-xlarge fas fa-check'></i> Los cambios se han guardado satisfactoriamente</h3>";
     // echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
-    mysqli_query($conex, $sql) or die("Error al ejecutar la consulta");
 } else {
     if (!isset($_REQUEST['id_tiquet'])) {
         $sql = "SELECT min(id_tiquet) FROM tiquets";
@@ -49,16 +50,18 @@ if (isset($_REQUEST['update'])) {
         <div class="w3-row w3-padding-16">
             <?php
             $conex = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
-            $sql = "SELECT * FROM tiquets INNER JOIN clientes ON id_cliente = cliente_id INNER JOIN estados ON id_estado = estado_id WHERE id_tiquet = " . $_REQUEST['id'];
+            $sql = "SELECT * FROM tiquets INNER JOIN clientes ON id_cliente = cliente_id INNER JOIN estados ON id_estado = estado_id WHERE id_tiquet = " . $_REQUEST['tiquet_id'];
             $result = mysqli_query($conex, $sql);
             $row = mysqli_fetch_assoc($result);
+            $tiquet = $_REQUEST['tiquet_id'];
             ?>
 
             <h4>Cliente: <?php echo $row['nombre_cliente'] . " " . $row['apellidos_cliente'] ?></h4>
             <h4>Actuación:</h4>
             <h4><?php echo $row['actuacion'] ?></h4>
             <div class="w3-content">
-                <form action="#">
+                <form action="#" method="GET">
+                <input type="hidden" name="tiquet_id" value="<?php echo $_REQUEST['tiquet_id']?>">
                     <section class="w3-section">
                         <label for="estado" class="w3-text-theme w3-medium">Estado</label>
                         <select name="estado" class="w3-select w3-white w3-border w3-border-theme-l4 w3-round" required>
@@ -73,7 +76,7 @@ if (isset($_REQUEST['update'])) {
                     </section>
                     <section class="w3-section">
                         <label>Comentario</label>
-                        <textarea class="w3-block w3-border w3-border-theme w3-round" rows="5" name="actuacion"></textarea>
+                        <textarea class="w3-block w3-border w3-border-theme w3-round" rows="5" name="actuacion" required></textarea>
                     </section>
                     <div class="w3-row w3-padding-24">
                         <div class="w3-col l6 m6 s6 w3-right-align">
@@ -96,7 +99,7 @@ if (isset($_REQUEST['update'])) {
             </thead>
             <tbody>
                 <?php
-                $tiquet = "tiquet_" . $_REQUEST['id'];
+                $tiquet = "tiquet_" . $_REQUEST['tiquet_id'];
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
                 $sql = "SELECT * FROM " . $tiquet . " INNER JOIN estados ON id_estado = estado_id";
                 $result = mysqli_query($conn, $sql);
