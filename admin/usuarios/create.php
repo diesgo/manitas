@@ -58,7 +58,7 @@
             <input class="w3-input w3-border w3-border-theme w3-round" type="text" name="email" required />
           </div>
           <div class="w3-col w3-padding">
-            <label class="w3-text-theme w3-large">Email</label>
+            <label class="w3-text-theme w3-large">Teléfono</label>
             <input class="w3-input w3-border w3-border-theme w3-round" type="text" name="telefono" required />
           </div>
           <div class="w3-col w3-padding">

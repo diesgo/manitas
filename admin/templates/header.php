@@ -97,7 +97,6 @@ $user = getUsersById($_SESSION['id_user']);
         <a href="../estados/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Estados</a>
         <a href="../usuarios/index.php" class="w3-bar-item w3-button w3-text-theme-dark w3-hover-theme">Usuarios</a>
         <a href="../servicios/index.php" class="w3-bar-item w3-button w3-hover-theme">Servicios</a>
-        <a href="../colaboradores/index.php" class="w3-bar-item w3-button w3-hover-theme">Colaboradores</a>
       </div>
 
       <div class="w3-bar-block">

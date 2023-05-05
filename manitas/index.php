@@ -17,9 +17,11 @@ require('../config/conexion.php');
 
 <body>
     <div class="w3-container">
-        <div class="w3-row">
+        <div class="w3-padding w3-right">
+            <a href="../admin/usuarios/exit.php" class="w3-right w3-button w3-theme-d3 w3-hover-theme"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+        <div class="w3-padding w3-left">
             <h4>Bienvenido <?php echo $_SESSION['username'] ?></h4>
-            <a href="../admin/usuarios/exit.php" class="w3-bar-item w3-button w3-theme-d3 w3-hover-theme"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
     <div class="w3-container">
@@ -33,11 +35,11 @@ require('../config/conexion.php');
                 WHERE user_id =" . $_SESSION['id_user'];
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-            echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'>
+            echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive'>
                     <thead class='w3-theme'>
                         <tr>
                             <th width='5%' class='w3-center' onclick='sortTable(0)'></i>tiquet</th>
-                            <th width='15%' onclick='sortTable(1)'>Cliente </th>
+                            <th width='15%' onclick='sortTable(1)' style='cursor:pointer'>Cliente </th>
                             <th width='60%'>Último comentario</th>
                             <th width='5%' class='w3-center' onclick='sortTable(2)'>Servicio </th>
                             <th width='10%' class='w3-center'>Estado</th>
@@ -83,6 +85,7 @@ require('../config/conexion.php');
         mysqli_close($conn);
         ?>
     </div>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>

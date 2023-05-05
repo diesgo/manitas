@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2023 a las 13:18:07
+-- Tiempo de generación: 02-05-2023 a las 13:18:03
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -63,7 +63,10 @@ INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellidos_cliente`, `dn
 (11, 'Santiago', 'Segura', '', '', 555444111, '', 0, '', '', '', 0, '', '2023-04-21 05:38:58', '2023-04-21 05:38:58'),
 (12, 'Carmen ', 'Avila Blosca', '', '', 648, 'Travessera de dalt', 83, '', '3ª', '2ª', 0, '', '2023-04-21 13:48:17', '2023-04-21 13:48:17'),
 (13, 'Teresa', 'García Fuster', '', 'tgfuste12@gmail.com', 639, 'Avenida Riera de cassoles ', 50, '', '2n', '2ª', 8012, 'Barcelona', '2023-04-21 14:30:34', '2023-04-21 14:30:34'),
-(14, 'Enrique', 'Villareal', '', '', 658215479, 'Libertad', 10, '', '', '', 0, 'Barcelona', '2023-04-25 10:38:50', '2023-04-25 10:38:50');
+(14, 'Enrique', 'Villareal', '', '', 658215479, 'Libertad', 10, '', '', '', 0, 'Barcelona', '2023-04-25 10:38:50', '2023-04-25 10:38:50'),
+(15, 'Alfonso', 'Fuertes', '38225648D', 'alfu@manitas.es', 654859674, '', 0, '', '', '', 0, '', '2023-05-02 08:21:29', '2023-05-02 08:21:29'),
+(16, 'Ramón', 'Valle', '46523125', 'Ramoncin@manitas.es', 123456, '', 0, '', '', '', 0, '', '2023-05-02 08:55:57', '2023-05-02 08:58:18'),
+(17, 'Alberto', '', '', '', 23, '', 0, '', '', '', 0, '', '2023-05-02 09:02:48', '2023-05-02 09:02:48');
 
 -- --------------------------------------------------------
 
@@ -297,15 +300,15 @@ CREATE TABLE `tiquets` (
 
 INSERT INTO `tiquets` (`id_tiquet`, `cliente_id`, `servicio_id`, `actuacion`, `estado_id`, `user_id`, `date_add`) VALUES
 (1, 6, 6, 'cambiar ventanas', 2, 1, '2023-04-20 20:36:22'),
-(2, 1, 4, 'El baño pierde agua.', 2, 2, '2023-04-20 20:43:15'),
-(3, 10, 4, 'Tiene una fuga', 2, 12, '2023-04-21 05:37:00'),
-(4, 11, 1, 'No tiene pelo', 1, NULL, '2023-04-21 05:38:58'),
-(5, 9, 3, 'Quiero hacer un escondite secreto para guardar mi fortuna.', 3, NULL, '2023-04-21 05:49:15'),
-(6, 12, 4, 'Desague Ducha. Hay que mirar la pèrduda en la tuberia de agua.', 2, 7, '2023-04-21 13:49:37'),
-(7, 13, 1, 'Nuevo piso y hay que colocar 2 marcos de puertas, manillas, paños (5) y algunos marcos nuevos de puerta.\r\nEllas tienen pensado lo que quieren colocar, preguntar primero.\r\nTeresa està disponible al mediodia o a partir de las 18:00h.', 1, NULL, '2023-04-21 14:34:50'),
-(8, 4, 1, '', 1, NULL, '2023-04-25 09:14:17'),
-(9, 7, 1, '', 1, NULL, '2023-04-25 09:14:56'),
-(10, 14, 1, 'El calentador no funciona', 1, NULL, '2023-04-25 10:38:51');
+(2, 1, 4, 'Las juntas de la descarga están en mal estado. Procedemois a pedir el material necesario', 5, 12, '2023-04-20 20:43:15'),
+(3, 10, 4, 'Se reactiva el tiquet con el comentario anterior', 3, 12, '2023-04-21 05:37:00'),
+(4, 11, 6, 'Se procede a tomar las medidas y pedir el material', 4, 13, '2023-04-21 05:38:58'),
+(5, 9, 3, 'Quiero hacer un escondite secreto para guardar mi fortuna.', 2, 16, '2023-04-21 05:49:15'),
+(6, 12, 4, 'Se revisan las soldaduras de las uniones. Queda en observación.', 5, 12, '2023-04-21 13:49:37'),
+(7, 13, 3, 'Nuevo piso y hay que colocar 2 marcos de puertas, manillas, paños (5) y algunos marcos nuevos de puerta.\r\nEllas tienen pensado lo que quieren colocar, preguntar primero.\r\nTeresa està disponible al mediodia o a partir de las 18:00h.', 2, 16, '2023-04-21 14:34:50'),
+(8, 4, 2, 'Cambiar lámpara del salón', 2, 18, '2023-04-25 09:14:17'),
+(9, 7, 2, 'Cambiar motor puerta del parking', 2, 18, '2023-04-25 09:14:56'),
+(10, 14, 5, 'El calentador no funciona', 2, 17, '2023-04-25 10:38:51');
 
 -- --------------------------------------------------------
 
@@ -348,7 +351,9 @@ CREATE TABLE `tiquet_2` (
 
 INSERT INTO `tiquet_2` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
 ('2023-04-20 20:43:15', 1, 1, 'Apertura de tiquet'),
-('2023-04-21 06:26:26', 2, 2, 'Asignado a Edu');
+('2023-04-21 06:26:26', 2, 2, 'Asignado a Edu'),
+('2023-05-02 07:59:28', 2, 12, 'Asignado a Fontanero'),
+('2023-05-02 08:04:30', 5, 12, 'Las juntas de la descarga están en mal estado. Procedemois a pedir el material necesario');
 
 -- --------------------------------------------------------
 
@@ -369,7 +374,11 @@ CREATE TABLE `tiquet_3` (
 
 INSERT INTO `tiquet_3` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
 ('2023-04-21 05:37:00', 1, 1, 'Apertura de tiquet'),
-('2023-04-28 09:59:55', 2, 12, 'Asignado a Fontanero');
+('2023-04-28 09:59:55', 2, 12, 'Asignado a Fontanero'),
+('2023-05-02 07:45:11', 3, 12, 'Se observa la pared húmeda y procedo a picar todo el yeso hasta descubrir las tuberías, concluyendo que estas entán en mal estado.'),
+('2023-05-02 07:53:18', 2, 12, 'Asignado a Fontanero'),
+('2023-05-02 07:55:20', 3, 12, 'Se reactiva el tiquet con el comentario anterior'),
+('2023-05-02 07:55:35', 3, 12, 'Se reactiva el tiquet con el comentario anterior');
 
 -- --------------------------------------------------------
 
@@ -389,7 +398,9 @@ CREATE TABLE `tiquet_4` (
 --
 
 INSERT INTO `tiquet_4` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-21 05:38:58', 1, 1, 'Apertura de tiquet');
+('2023-04-21 05:38:58', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 09:35:14', 2, 13, 'Asignado a Carpintero'),
+('2023-05-02 10:59:40', 4, 13, 'Se procede a tomar las medidas y pedir el material');
 
 -- --------------------------------------------------------
 
@@ -409,7 +420,8 @@ CREATE TABLE `tiquet_5` (
 --
 
 INSERT INTO `tiquet_5` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-21 05:49:15', 1, 1, 'Apertura de tiquet');
+('2023-04-21 05:49:15', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 10:28:49', 2, 16, 'Asignado a Paleta');
 
 -- --------------------------------------------------------
 
@@ -430,7 +442,9 @@ CREATE TABLE `tiquet_6` (
 
 INSERT INTO `tiquet_6` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
 ('2023-04-21 13:49:38', 1, 1, 'Apertura de tiquet'),
-('2023-04-27 18:39:43', 2, 7, 'Asignado a Fontanero');
+('2023-04-27 18:39:43', 2, 7, 'Asignado a Fontanero'),
+('2023-05-02 07:59:43', 2, 12, 'Asignado a Fontanero'),
+('2023-05-02 11:02:39', 5, 12, 'Se revisan las soldaduras de las uniones. Queda en observación.');
 
 -- --------------------------------------------------------
 
@@ -450,7 +464,8 @@ CREATE TABLE `tiquet_7` (
 --
 
 INSERT INTO `tiquet_7` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-21 14:34:51', 1, 1, 'Apertura de tiquet');
+('2023-04-21 14:34:51', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 09:35:30', 2, 16, 'Asignado a Paleta');
 
 -- --------------------------------------------------------
 
@@ -470,7 +485,8 @@ CREATE TABLE `tiquet_8` (
 --
 
 INSERT INTO `tiquet_8` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-25 09:14:18', 1, 1, 'Apertura de tiquet');
+('2023-04-25 09:14:18', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 09:38:15', 2, 18, 'Asignado a Electricista');
 
 -- --------------------------------------------------------
 
@@ -490,7 +506,8 @@ CREATE TABLE `tiquet_9` (
 --
 
 INSERT INTO `tiquet_9` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-25 09:14:56', 1, 1, 'Apertura de tiquet');
+('2023-04-25 09:14:56', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 09:38:32', 2, 18, 'Asignado a Electricasta');
 
 -- --------------------------------------------------------
 
@@ -510,7 +527,8 @@ CREATE TABLE `tiquet_10` (
 --
 
 INSERT INTO `tiquet_10` (`fecha`, `estado_id`, `user_id`, `comentario`) VALUES
-('2023-04-25 10:38:51', 1, 1, 'Apertura de tiquet');
+('2023-04-25 10:38:51', 1, 1, 'Apertura de tiquet'),
+('2023-05-02 09:38:47', 2, 17, 'Asignado a Calefacción');
 
 -- --------------------------------------------------------
 
@@ -593,7 +611,8 @@ INSERT INTO `users` (`id_user`, `username`, `nombre`, `apellidos`, `email`, `tel
 (12, 'fontanero', '', '', 'fontanero@manitas.es', '', '$2y$10$jmfqbS5jwnb07FLDFsOT8eopr4awfmV2A6Z6hakiJ7KF1JG2siyl.', 2, 4, 50, 21, 7, '2023-04-27 14:57:04', '2023-04-28 06:03:26'),
 (13, 'carpintero', '', '', 'carpintero@manitas.es', '', '$2y$10$6nhOIFeRnYSASwIHroo7Y.MHfZORAe1bdsDuiAi7gNU2DqugNFbVy', 2, 6, 50, 21, 7, '2023-04-27 15:05:45', '2023-04-28 06:03:06'),
 (16, 'paleta', NULL, NULL, 'paleta@manitas.es', '', '$2y$10$sAyq6WQMXYMof0hnZ86e8O5QiP5TbczxLBsZnpojZicLD.49F3BIO', 2, 3, 50, 21, 7, '2023-04-27 17:43:16', '2023-04-28 06:03:48'),
-(17, 'calefaccion', NULL, NULL, 'calefaccion@manitas.es', '658987412', '$2y$10$NSqulYED3nL/fcLvDRpuQOOg4fYwPw6/zrctHC99DPOXPN4DBJBvG', 2, 5, 50, 21, 7, '2023-04-27 22:51:04', '2023-04-27 22:51:04');
+(17, 'calefaccion', NULL, NULL, 'calefaccion@manitas.es', '658987412', '$2y$10$NSqulYED3nL/fcLvDRpuQOOg4fYwPw6/zrctHC99DPOXPN4DBJBvG', 2, 5, 50, 21, 7, '2023-04-27 22:51:04', '2023-04-27 22:51:04'),
+(18, 'electricista', NULL, NULL, 'electricista@manitas.es', '684512569', '$2y$10$QJw7xvCJD4C4BNohHBg8EuqxT/nO1tGwTe1EHTDmCoPsu7i6L9VPS', 2, 2, 50, 21, 7, '2023-05-02 09:37:41', '2023-05-02 09:37:41');
 
 --
 -- Índices para tablas volcadas
@@ -683,7 +702,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
@@ -737,7 +756,7 @@ ALTER TABLE `titulos`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas
