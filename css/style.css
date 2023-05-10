@@ -1,8 +1,11 @@
 a, button, input[type="submit"], input[type="button"] {
-    font-size: 15px;;
+    font-size: 15px;
 }
 a:hover{
     text-decoration: none;
+}
+p.datos{
+    margin: 2px;
 }
 .frame{
   width: 35%;

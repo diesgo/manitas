@@ -117,6 +117,9 @@
           </form>
         </div>
       </div>
+      <div class="w3-row w3-center w3-padding-48">
+            <input type="button" value="volver" onclick="location.replace('../home/index.php')" class="w3-button w3-theme w3-large w3-round w3-padding-large">
+        </div>
       <script src="../../js/checkFormNuevoCliente.js"></script>
 
       <!-- !End page content! -->

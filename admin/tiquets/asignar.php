@@ -16,8 +16,14 @@
           $comentario = $_REQUEST['comentario'];
           $sql = "UPDATE tiquets SET estado_id = 2, user_id =  '$user' WHERE id_tiquet = '$id'";
           mysqli_query(openConex(), $sql);
-          $sql = "INSERT INTO tiquet_" . $_REQUEST['id'] . " (estado_id, user_id, comentario) VALUES (2, '" . $user . "', '" . $comentario . "')";
-          $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
+
+          $tiquet = "tiquet_" . $_REQUEST['id'];          
+          if (file_exists('../xml/' . $tiquet . '.xml')) {
+            $xml = simplexml_load_file('../xml/' . $tiquet . '.xml');
+          } else {
+            exit('Error al abrir el archivo ' . $tiquet . '.xml.');
+          }
+
           if ($conn->query($sql) === TRUE) {
             echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
             echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
@@ -25,7 +31,7 @@
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
           $conn->close() or die("Error al ejecutar la consulta");
-          // echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+          //? echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
         }
       } else {
         if (!isset($_POST['id'])) {

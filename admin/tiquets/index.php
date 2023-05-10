@@ -10,15 +10,17 @@
         $sql = "SELECT * FROM tiquets 
         INNER JOIN clientes ON id_cliente = cliente_id 
         INNER JOIN estados on id_estado = estado_id 
-        INNER JOIN servicios on id_servicio = servicio_id";
+        INNER JOIN servicios on id_servicio = servicio_id
+        INNER JOIN users on id_user = user_id";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-          echo "<table id='grid' class='w3-table w3-striped w3-bordered w3-responsive' style='color: #555;'><thead class='w3-theme'><tr>
+          echo "<table id='grid' class='w3-table w3-striped w3-bordered' style='color: #555;'><thead class='w3-theme'><tr>
               <th width='5%' class='w3-center' onclick='sortTable(0)'></i>tiquet</th>
               <th width='15%' onclick='sortTable(1)'>Cliente </th>
-              <th width='65%'>Incidencia</th>
+              <th width='55%'>Incidencia</th>
               <th width='5%' class='w3-center' onclick='sortTable(2)'>Servicio </th>
               <th width='5%' class='w3-center'>Estado</th>
+              <th width='10%' class='w3-center'>Asignado a</th>
               <th width='5%' class='w3-center'>Diario</th></tr></thead><tbody>";
           // output data of each row
           while ($row = mysqli_fetch_assoc($result)) {
@@ -44,6 +46,7 @@
                   echo "Asignado </td>";
                 }
               ?>
+              <td class='w3-center'><?php echo $row['username'] ?></td>
               <td class='w3-center'><a class='w3-padding w3-text-theme w3-round' href='show.php?id=<?php echo $row['id_tiquet'] ?>'><i class="fas fa-book-reader"></i></a></td>
               
             </tr>
@@ -57,6 +60,9 @@
         </tbody>
         </table>
       </div>
+      <div class="w3-row w3-center w3-padding-48">
+            <input type="button" value="volver" onclick="location.replace('../home/index.php')" class="w3-button w3-theme w3-large w3-round w3-padding-large">
+        </div>
       <?php
       include '../templates/footer.php';
       ?>

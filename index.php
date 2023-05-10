@@ -44,7 +44,7 @@ $setting = getSetingsById(1);
   }
 </style>
 
-<body class="w3-theme-action w3-padding-64">
+<body class="w3-theme-l4 w3-padding-64">
 
   <div class="w3-content">
     <div class="w3-row w3-center">

@@ -3,25 +3,42 @@
       $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
 
       if (isset($_REQUEST['tiquetCliente'])) {
-        $id_cliente = $_REQUEST['cliente'];
-        $servicio_id = $_REQUEST['servicio'];
+        $id_cliente = $_REQUEST['cliente_id'];
+        $servicio_id = $_REQUEST['servicio_id'];
         $actuacion = $_REQUEST['actuacion'];
         $sql = "INSERT INTO tiquets (cliente_id, servicio_id, actuacion) VALUES ('$id_cliente', '$servicio_id', '$actuacion')";
         mysqli_query($conn, $sql) or die('<p>Problemas en el insert 1' . mysqli_error($conn) . '</p>');
+
+        $servicio = getServiciosById($servicio_id);
         $tiquets = getTiquets();
         $num_tiquet = mysqli_num_rows($tiquets);
-        $sql = "CREATE TABLE tiquet_$num_tiquet  (
-          fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-          estado_id INT(11) DEFAULT 1,
-          user_id int(11) DEFAULT 1,
-          comentario VARCHAR(255) NOT NULL DEFAULT 'Apertura de tiquet'
-          )";
-        mysqli_query($conn, $sql) or die('<p>Problemas en el create' . mysqli_error($conn) . '</p>');
-        $sql = "INSERT INTO tiquet_" . $num_tiquet . " (estado_id) VALUES (1)";
-        mysqli_query($conn, $sql) or die('<p>Problemas en el inser 2' . mysqli_error($conn) . '</p>');
-        mysqli_close($conn);
+
+        $xml = new DomDocument('1.0', 'UTF-8');
+
+            $raiz = $xml->createElement('tiquet');
+            $raiz = $xml->appendChild($raiz);
+
+            $nodo = $xml->createElement('registro');
+            $nodo = $raiz->appendChild($nodo);
+
+            $subnodo = $xml->createElement('fecha', date('d-m-Y'));
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('comentario', 'Apertura de tiquet');
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('servicio', $servicio['servicio']);
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('estado', 'Registrado');
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $xml->formatOutput = true;
+            $xml->saveXML();
+            $xml->save('../xml/tiquet_'.$num_tiquet.'.xml');
+
         echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
-        echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+        //? echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
       }
 
       if (isset($_REQUEST['tiquetNuevoCliente'])) {
@@ -49,13 +66,33 @@
             mysqli_query($conn, $sql) or die('<p>Problemas en el insert 1' . mysqli_error($conn) . '</p>');
             $tiquets = getTiquets();
             $num_tiquet = mysqli_num_rows($tiquets);
-            $sql = "CREATE TABLE tiquet_$num_tiquet  (fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP, estado_id INT(11) DEFAULT 1, colaborador_id int(11) DEFAULT 1, comentario VARCHAR(255) NOT NULL DEFAULT 'Apertura de tiquet')";
-            mysqli_query($conn, $sql) or die('<p>Problemas en el create' . mysqli_error($conn) . '</p>');
-            $sql = "INSERT INTO tiquet_" . $num_tiquet . " (estado_id) VALUES (1)";
-            mysqli_query($conn, $sql) or die('<p>Problemas en el inser 2' . mysqli_error($conn) . '</p>');
-            mysqli_close($conn);
+
+            $xml = new DomDocument('1.0', 'UTF-8');
+
+            $raiz = $xml->createElement('tiquet');
+            $raiz = $xml->appendChild($raiz);
+
+            $nodo = $xml->createElement('registro');
+            $nodo = $raiz->appendChild($nodo);
+
+            $subnodo = $xml->createElement('fecha', date('d-m-Y'));
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('comentario', 'apertura de tiquet');
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('servicio', $servicio['servicio']);
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $subnodo = $xml->createElement('estado', 'Registrado');
+            $subnodo = $nodo->appendChild($subnodo);
+
+            $xml->formatOutput = true;
+            $xml->saveXML();
+            $xml->save('../xml/tiquet_'.$num_tiquet.'.xml');
+
             echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
-            echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+            //? echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
           } else {
             echo '<p>Problemas al crear el nuevo cliente' . mysqli_error($conn) . '</p>';
           }

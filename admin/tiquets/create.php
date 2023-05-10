@@ -12,7 +12,7 @@
 
       <div id="seleccionar" class="w3-content">
         <div class="w3-row w3-center w3-theme-l4 w3-round w3-padding w3-card">
-          <form accept-charset="utf-8" action="#" method="POST">
+          <form accept-charset="utf-8" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="w3-col s12 m4 w3-padding">
               <label for='cliente' class="w3-text-theme w3-medium">Cliente</label>
               <select name="cliente" id="cliente" class='w3-block w3-select w3-white w3-border w3-border-theme w3-round' onchange="submit()">
@@ -26,7 +26,7 @@
               </select>
             </div>
           </form>
-          <form accept-charset="utf-8" action="#" method="POST">
+          <form accept-charset="utf-8" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="w3-col s12 m4 w3-padding">
               <label for="nuevo_cliente" class="w3-text-theme w3-medium">Nuevo Cliente</label>
               <input type="submit" value="Nuevo" name="nuevo_cliente" class="w3-block w3-button w3-round w3-border w3-border-theme w3-theme" />
@@ -34,6 +34,7 @@
           </form>
         </div>
       </div>
+      
       <?php
       if (isset($_REQUEST['cliente'])) {
         $id_cliente = $_REQUEST['cliente'];

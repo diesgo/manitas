@@ -28,39 +28,40 @@
               <?php echo $row['actuacion'] ?>
             </textarea>
         </div>
-        <table id="grid" class="w3-table w3-striped w3-bordered w3-responsive" style="color: #555">
+        <table id="grid" class="w3-table w3-striped w3-bordered" style="color: #555">
           <thead class="w3-theme">
             <tr>
               <th style="width:15%" class="w3-center" onclick="sortTable(0)"></i>Fecha</th>
               <th style="width:10%" onclick="sortTable(1)">Estado</th>
               <th style="width:20%">Comentario</th>
-              <th style="width:15%" class="w3-center" style='width: 2%'>Actualizar</th>
+              <th style="width:15%" class="w3-center" style='width: 2%'>Servicio</th>
             </tr>
           </thead>
           <tbody>
             <?php
             $tiquet = "tiquet_" . $_REQUEST['id'];
-            $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
-            $sql = "SELECT * FROM " . $tiquet . " INNER JOIN estados ON id_estado = estado_id";
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-              // output data of each row
-              while ($row = mysqli_fetch_assoc($result)) {
+
+            if (file_exists('../xml/' . $tiquet . '.xml')) {
+              $xml = simplexml_load_file('../xml/' . $tiquet . '.xml');
+            } else {
+              exit('Error al abrir el archivo ' . $tiquet . '.xml.');
+            }
+
+            // $conex = openConex();
+            for ($i = 0; $i < count($xml); $i++) {
+              $FECHA = $xml->registro[$i]->fecha;
+              $COMENTARIO = $xml->registro[$i]->comentario;
+              $SERVICIO = $xml->registro[$i]->servicio;
+              $ESTADO = $xml->registro[$i]->estado;
+            }
 
             ?>
                 <tr>
-                  <td class="w3-center"><?php echo $row["fecha"] ?></td>
-                  <td><?php echo $row["estado"] ?></td>
-                  <td><?php echo $row["comentario"] ?></td>
-                  <td class="w3-center"><a class='w3-text-orange w3-padding w3-round' href='update.php?id=<?php echo $_REQUEST['id'] ?>'><i class="fas fa-edit"></i></a></td>
+                  <td class='w3-center'><?php echo $FECHA ?></td>
+                  <td><?php echo $ESTADO ?></td>
+                  <td><?php echo $COMENTARIO ?></td>
+                  <td class="w3-center"><?php echo $SERVICIO ?></td>
                 </tr>
-            <?php
-              }
-            } else {
-              echo "No se han encontrado registros.";
-            }
-            mysqli_close($conn);
-            ?>
           </tbody>
         </table>
       </div>

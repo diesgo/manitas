@@ -25,6 +25,7 @@
               <th>CP</th>
               <th class="w3-center">Población</th>
               <th>Editar</th>
+              <th>Tiquets abiertos</th>
               <th>Ver</th>
             </tr>
           </thead>
@@ -51,6 +52,19 @@
                   </a>
                 </td>
                 <td class='w3-center'>
+                <?php
+                $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
+                $sql = "SELECT * FROM tiquets WHERE cliente_id = $cliente[id_cliente]";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                  echo mysqli_num_rows($result);
+                } else {
+                  echo "0";
+                }
+                mysqli_close($conn);
+                ?>
+                </td>
+                <td class='w3-center'>
                   <a class='w3-text-green w3-hover-text-orange' href='show.php?id_cliente=<?php echo $cliente["id_cliente"] ?>'>
                     <i class='fas fa-balance-scale w3-medium'></i>
                   </a>
@@ -60,6 +74,9 @@
           </tbody>
         </table>
       </div>
+      <div class="w3-row w3-center w3-padding-48">
+            <input type="button" value="volver" onclick="location.replace('../home/index.php')" class="w3-button w3-theme w3-large w3-round w3-padding-large">
+        </div>
       <?php
       include '../templates/footer.php';
       ?>

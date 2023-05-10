@@ -57,7 +57,7 @@ $user = getUsersById($_SESSION['id_user']);
 
       <div class="w3-row w3-padding-large">
 
-        <div class="w3-col l4 m4 s6 w3-padding">
+        <div class="w3-col l4 m4 s12 w3-padding">
           <a href="admin/tiquets/create.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
             <h4 class="w3-center w3-text-theme">Nuevo tiquet</h4>
             <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
@@ -66,7 +66,7 @@ $user = getUsersById($_SESSION['id_user']);
           </a>
         </div>
 
-        <div class="w3-col l4 m4 s6 w3-padding">
+        <div class="w3-col l4 m4 s12 w3-padding">
           <a href="admin/clientes/create.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
             <h4 class="w3-center w3-text-theme">Nuevo cliente</h4>
             <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">
@@ -75,7 +75,7 @@ $user = getUsersById($_SESSION['id_user']);
           </a>
         </div>
 
-        <div class="w3-col l4 m4 s6 w3-padding">
+        <div class="w3-col l4 m4 s12 w3-padding">
           <a href="admin/home/index.php" class="w3-btn w3-white w3-border w3-border-theme w3-round w3-block w3-margin-top w3-margin-bottom w3-card">
             <h4 class="w3-center w3-text-theme">Administración</h4>
             <span class="w3-center w3-xxxlarge w3-margin-bottom w3-text-theme">

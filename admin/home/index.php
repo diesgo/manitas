@@ -62,7 +62,7 @@
         <div class="w3-quarter">
           <a href="../tiquets/tiquets_estados.php?estado_id=2" style="text-decoration:none">
             <div class="w3-container w3-theme w3-padding-16">
-              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-boxes"></i></span></div>
+              <div class="w3-left"><span class="w3-xxxlarge"><i class="fas fa-people-arrows"></i></span></div>
               <div class="w3-right">
                 <?php
                 $conn = new mysqli(DBHOST, DBUSER, DBPWD, DBNAME);
