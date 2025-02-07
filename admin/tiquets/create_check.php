@@ -38,7 +38,7 @@
             $xml->save('../xml/tiquet_'.$num_tiquet.'.xml');
 
         echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
-        //? echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+        echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
       }
 
       if (isset($_REQUEST['tiquetNuevoCliente'])) {
@@ -92,7 +92,7 @@
             $xml->save('../xml/tiquet_'.$num_tiquet.'.xml');
 
             echo "<h3 class='w3-text-green w3-animate-zoom'><i class='w3-xlarge fas fa-check'></i> Se ha creado un nuevo registro</h3>";
-            //? echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
+            echo "<script>function returnIndex(){location.replace('index.php')}; setInterval(returnIndex,1000);</script>";
           } else {
             echo '<p>Problemas al crear el nuevo cliente' . mysqli_error($conn) . '</p>';
           }
